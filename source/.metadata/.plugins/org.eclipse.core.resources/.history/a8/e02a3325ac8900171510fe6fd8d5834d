@@ -1,0 +1,17 @@
+package org.waxing.db;
+
+import java.sql.SQLException;
+
+public class JdbcUtils {
+	public static getConnection() {
+		Connection conn=null;
+		try {
+		Context initContext = new InitialContext();
+		Context envContext  = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/waxing");
+		conn = ds.getConnection();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

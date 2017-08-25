@@ -1,0 +1,11 @@
+package org.waxing.db;
+
+public class JdbcUtils {
+	public static getConnection() {
+		Connection conn=null;
+		Context initContext = new InitialContext();
+		Context envContext  = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/waxing");
+		Connection conn = ds.getConnection();
+	}
+}
