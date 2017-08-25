@@ -1,2 +1,4 @@
 # MyWeb02
-WaxingShop Project
+WaxingShop Project.
+
+#ワックスのホームページ
