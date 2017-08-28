@@ -20,3 +20,4 @@ STRING=\#EC7600 | null | false | false | false | false
 UNIVERSAL=\#678CB1 | null | false | false | false | false
 URI=\#EC7600 | null | false | false | false | false
 eclipse.preferences.version=1
+newFileTemplateName=New CSS File
