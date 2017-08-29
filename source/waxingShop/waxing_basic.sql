@@ -39,6 +39,7 @@ create table msg_admin(
 create table board(
 	board_num number primary key,
 	userid varchar2(25),
+	kinds varchar2(15),
 	title varchar2(100),
 	writer varchar2(14),
 	content varchar2(1000),
