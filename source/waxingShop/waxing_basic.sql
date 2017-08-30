@@ -10,9 +10,8 @@ create table member(
 	id varchar2(25) primary key,
 	pwd varchar2(30) not null,
 	name varchar2(14) not null,
-	identify char(14) not null,
+	identity char(14) not null,
 	birth DATE,
-	nation varchar2(30),
 	prefer_doc number(10),
 	grade varchar2(20),
 	FOREIGN KEY (prefer_doc) REFERENCES staff(staff_num)
