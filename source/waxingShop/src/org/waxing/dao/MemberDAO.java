@@ -72,6 +72,29 @@ public class MemberDAO {
 		}
 		return chk;
 	}
+	public boolean idCheck(String id) {
+		String sql="select id from member where id=?";
+		boolean chk=false;
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			conn=getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				chk=true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null)close(rs);
+			if(pstmt!=null)close(pstmt);
+			if(conn!=null)close(conn);
+		}
+		return chk;
+	}
 	public void registerMember(Member newMember) {
 		String sql="insert into member values(?,?,?,?,?,0,'client')";
 		Connection conn=null;
@@ -92,4 +115,21 @@ public class MemberDAO {
 			if(conn!=null)close(conn);
 		}
 	}
+	public void deleteMember(String id) {
+		String sql="delete from member where id=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		try {
+			conn=getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt!=null)close(pstmt);
+			if(conn!=null)close(conn);
+		}
+	}
+	
 }
