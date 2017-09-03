@@ -131,5 +131,7 @@ public class MemberDAO {
 			if(conn!=null)close(conn);
 		}
 	}
-	
+	public void modifyMember(Member modMember) {
+		String sql="update member set ";
+	}
 }

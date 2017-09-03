@@ -11,7 +11,6 @@ public class Member {
 	private int prefer_doc;
 	private String grade;
 	
-	
 	public String getId() {
 		return id;
 	}
