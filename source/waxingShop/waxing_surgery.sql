@@ -1,5 +1,5 @@
 drop table surgery;
-drop table booking;
+drop table reserve;
 
 create table surgery(
 	surgery_num number primary key,
@@ -8,14 +8,15 @@ create table surgery(
 	kinds varchar2(30)
 );
 
-create table booking(
-	book_num number primary key,
+create table reserve(
+	reserve_num number primary key,
 	client varchar2(25),
 	participant number,
-	book_price number,
-	book_content varchar2(30),
-	book_date DATE default sysdate,
-	book_check char(1) default 'N',
+	reserve_price number,
+	reserve_content number,
+	reserve_date DATE default sysdate,
+	reserve_check char(1) default 'N',
 	FOREIGN KEY (client) REFERENCES member(id),
-	FOREIGN KEY (participant) REFERENCES staff(staff_num)
+	FOREIGN KEY (participant) REFERENCES staff(staff_num),
+	FOREIGN KEY (reserve_content) REFERENCES surgery(surgery_num)
 );
