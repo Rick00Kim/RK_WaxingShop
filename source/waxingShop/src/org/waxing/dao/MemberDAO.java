@@ -131,10 +131,22 @@ public class MemberDAO {
 			if(conn!=null)close(conn);
 		}
 	}
-	public void modifyMember(Member modMember) {
-		String sql="update member set ";
+	public void modifyPassword(String id,String pwd) {
+		String sql="update member set pwd=? where id=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		try {
+			conn=getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, pwd);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt!=null)close(pstmt);
+			if(conn!=null)close(conn);
+		}
 	}
-	public void check() {
-		System.out.println("Fefefe");
-	}
+	
 }
