@@ -7,11 +7,13 @@
 <fullyQualifiedTypeName name="org.waxing.bean.Member"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Board"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Reply"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Msg_admin"/>
+<fullyQualifiedTypeName name="org.waxing.bean.Msg_client"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="org.waxing.bean.Msg_client"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.waxing.bean.Staff"/>
+<fullyQualifiedTypeName name="org.waxing.bean.Department"/>
 </qualifiedTypeNameHistroy>

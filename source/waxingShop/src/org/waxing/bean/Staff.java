@@ -2,11 +2,11 @@ package org.waxing.bean;
 
 public class Staff {
 	private int staff_num;
-	private String name;
+	private String staff_name;
 	private int career;
-	private String detail;
+	private String comment;
 	private int depart;
-	
+	private Department department;
 	
 	public int getStaff_num() {
 		return staff_num;
@@ -14,11 +14,12 @@ public class Staff {
 	public void setStaff_num(int staff_num) {
 		this.staff_num = staff_num;
 	}
-	public String getName() {
-		return name;
+	
+	public String getStaff_name() {
+		return staff_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setStaff_name(String staff_name) {
+		this.staff_name = staff_name;
 	}
 	public int getCareer() {
 		return career;
@@ -26,11 +27,11 @@ public class Staff {
 	public void setCareer(int career) {
 		this.career = career;
 	}
-	public String getDetail() {
-		return detail;
+	public String getComment() {
+		return comment;
 	}
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	public int getDepart() {
 		return depart;
@@ -38,4 +39,11 @@ public class Staff {
 	public void setDepart(int depart) {
 		this.depart = depart;
 	}
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
 }

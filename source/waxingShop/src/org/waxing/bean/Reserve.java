@@ -10,6 +10,11 @@ public class Reserve {
 	private int reserve_content;
 	private Date reserve_date;
 	private String reserve_check;
+	private Staff staff;
+	private Member member;
+	private Surgery surgery;
+	
+	
 	public int getReserve_num() {
 		return reserve_num;
 	}
@@ -34,7 +39,6 @@ public class Reserve {
 	public void setReserve_price(int reserve_price) {
 		this.reserve_price = reserve_price;
 	}
-	
 	public int getReserve_content() {
 		return reserve_content;
 	}
@@ -53,6 +57,23 @@ public class Reserve {
 	public void setReserve_check(String reserve_check) {
 		this.reserve_check = reserve_check;
 	}
-	
+	public Staff getStaff() {
+		return staff;
+	}
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+	public Member getMember() {
+		return member;
+	}
+	public void setMember(Member member) {
+		this.member = member;
+	}
+	public Surgery getSurgery() {
+		return surgery;
+	}
+	public void setSurgery(Surgery surgery) {
+		this.surgery = surgery;
+	}
 	
 }

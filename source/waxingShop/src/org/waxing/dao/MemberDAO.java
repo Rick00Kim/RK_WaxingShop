@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.waxing.bean.Member;
+import org.waxing.bean.Staff;
 
 public class MemberDAO {
 	private MemberDAO() {}
@@ -16,7 +17,7 @@ public class MemberDAO {
 		return instance;
 	}
 	public Member getOneMember(String id) {
-		String sql="select * from member where id=?";
+		String sql="select * from member,staff where id=?";
 		Member oneMember=null;
 		Connection conn=null;
 		PreparedStatement pstmt=null;
@@ -35,6 +36,13 @@ public class MemberDAO {
 				oneMember.setBirth(rs.getDate("birth"));
 				oneMember.setPrefer_doc(rs.getInt("prefer_doctor"));
 				oneMember.setGrade(rs.getString("grade"));
+					Staff temp=new Staff();
+					temp.setStaff_num(rs.getInt("staff_num"));
+					temp.setStaff_name(rs.getString("staff_name"));
+					temp.setCareer(rs.getInt("career"));
+					temp.setComment(rs.getString("comment"));
+					temp.setDepart(rs.getInt("depart"));
+				oneMember.setStaff(temp);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -96,7 +104,7 @@ public class MemberDAO {
 		return chk;
 	}
 	public void registerMember(Member newMember) {
-		String sql="insert into member values(?,?,?,?,?,0,'client')";
+		String sql="insert into member values(?,?,?,?,?,?,0,'client')";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		try {
@@ -107,6 +115,7 @@ public class MemberDAO {
 			pstmt.setString(3, newMember.getName());
 			pstmt.setString(4, newMember.getIdentify());
 			pstmt.setDate(5,newMember.getBirth());
+			pstmt.setString(6, newMember.getPhone());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

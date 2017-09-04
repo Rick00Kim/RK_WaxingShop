@@ -8,8 +8,10 @@ public class Member {
 	private String name;
 	private String identify;
 	private Date birth;
+	private String phone;
 	private int prefer_doc;
 	private String grade;
+	private Staff staff;
 	
 	public String getId() {
 		return id;
@@ -41,6 +43,13 @@ public class Member {
 	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
+	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public int getPrefer_doc() {
 		return prefer_doc;
 	}
@@ -52,6 +61,12 @@ public class Member {
 	}
 	public void setGrade(String grade) {
 		this.grade = grade;
+	}
+	public Staff getStaff() {
+		return staff;
+	}
+	public void setStaff(Staff staff) {
+		this.staff = staff;
 	}
 	
 	

@@ -3,7 +3,8 @@ drop table reserve;
 
 create table surgery(
 	surgery_num number primary key,
-	name varchar2(30),
+	surgery_name varchar2(30),
+	surgery_content varchar2(30),
 	price number,
 	kinds varchar2(30)
 );

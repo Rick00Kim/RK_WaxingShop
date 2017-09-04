@@ -12,6 +12,7 @@ create table member(
 	name varchar2(14) not null,
 	identity char(14) not null,
 	birth DATE,
+	phone varchar2(14),
 	prefer_doc number(10),
 	grade varchar2(20),
 	FOREIGN KEY (prefer_doc) REFERENCES staff(staff_num)
@@ -67,3 +68,4 @@ create table staff(
 	depart number(10),
 	FOREIGN KEY (depart) REFERENCES department(depart_num)
 );
+

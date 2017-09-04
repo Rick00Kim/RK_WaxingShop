@@ -3,6 +3,7 @@ package org.waxing.bean;
 public class Surgery {
 	private int sur_num;
 	private String name;
+	private String sur_content;
 	private int number;
 	private String kinds;
 	
@@ -17,6 +18,12 @@ public class Surgery {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getSur_content() {
+		return sur_content;
+	}
+	public void setSur_content(String sur_content) {
+		this.sur_content = sur_content;
 	}
 	public int getNumber() {
 		return number;
