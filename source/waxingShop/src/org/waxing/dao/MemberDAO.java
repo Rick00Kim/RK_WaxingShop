@@ -45,7 +45,7 @@ public class MemberDAO {
 		}
 		return oneMember;
 	}
-	public int checkLogin(String id,String pwd) {
+	public int loginCheck(String id,String pwd) {
 		String sql="select pwd from member where id=?";
 		int chk=-1;
 		Connection conn=null;
@@ -133,5 +133,8 @@ public class MemberDAO {
 	}
 	public void modifyMember(Member modMember) {
 		String sql="update member set ";
+	}
+	public void check() {
+		System.out.println("Fefefe");
 	}
 }
