@@ -16,4 +16,5 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Staff"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Department"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
 </qualifiedTypeNameHistroy>

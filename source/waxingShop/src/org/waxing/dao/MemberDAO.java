@@ -32,17 +32,18 @@ public class MemberDAO {
 				oneMember.setId(id);
 				oneMember.setPwd(rs.getString("pwd"));
 				oneMember.setName(rs.getString("name"));
-				oneMember.setIdentify(rs.getString("identity"));
+				oneMember.setIdentification(rs.getString("identification"));
 				oneMember.setBirth(rs.getDate("birth"));
-				oneMember.setPrefer_doc(rs.getInt("prefer_doctor"));
+				oneMember.setPhone(rs.getString("phone"));
+				oneMember.setPrefer_doc(rs.getInt("prefer_surger"));
 				oneMember.setGrade(rs.getString("grade"));
-					Staff temp=new Staff();
-					temp.setStaff_num(rs.getInt("staff_num"));
-					temp.setStaff_name(rs.getString("staff_name"));
-					temp.setCareer(rs.getInt("career"));
-					temp.setComment(rs.getString("comment"));
-					temp.setDepart(rs.getInt("depart"));
-				oneMember.setStaff(temp);
+					Staff staffTemp=new Staff();
+					staffTemp.setStaff_num(rs.getInt("staff_num"));
+					staffTemp.setStaff_name(rs.getString("staff_name"));
+					staffTemp.setCareer(rs.getInt("staff_career"));
+					staffTemp.setDetail(rs.getString("staff_detail"));
+					staffTemp.setDepart(rs.getInt("depart"));
+				oneMember.setStaff(staffTemp);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -104,7 +105,7 @@ public class MemberDAO {
 		return chk;
 	}
 	public void registerMember(Member newMember) {
-		String sql="insert into member values(?,?,?,?,?,?,0,'client')";
+		String sql="insert into member values(?,?,?,?,?,?,?,1,'client')";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		try {
@@ -113,9 +114,11 @@ public class MemberDAO {
 			pstmt.setString(1, newMember.getId());
 			pstmt.setString(2, newMember.getPwd());
 			pstmt.setString(3, newMember.getName());
-			pstmt.setString(4, newMember.getIdentify());
+			pstmt.setString(4, newMember.getIdentification());
 			pstmt.setDate(5,newMember.getBirth());
 			pstmt.setString(6, newMember.getPhone());
+			pstmt.setInt(7, newMember.getPrefer_doc());
+			
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

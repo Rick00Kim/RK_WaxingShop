@@ -27,11 +27,12 @@ public class BoardDAO {
 			while(rs.next()) {
 				Board temp=new Board();
 				temp.setBoard_num(Integer.parseInt(rs.getString("board_num")));
-				temp.setUserid(rs.getString("userid"));
-				temp.setTitle(rs.getString("title"));
-				temp.setWriter(rs.getString("writer"));
+				temp.setUserid(rs.getString("board_userid"));
+				temp.setKinds(rs.getString("board_kinds"));
+				temp.setTitle(rs.getString("board_title"));
 				temp.setContent(rs.getString("content"));
-				temp.setWriteday(rs.getDate("writeday"));
+				temp.setFileName(rs.getString("board_filename"));
+				temp.setWriteday(rs.getTimestamp("board_writeday"));
 				list.add(temp);
 			}
 		}catch(SQLException e) {
@@ -54,14 +55,15 @@ public class BoardDAO {
 			conn=getConnection();
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
-			while(rs.next()) {
+			if(rs.next()) {
 				Board temp=new Board();
 				temp.setBoard_num(Integer.parseInt(rs.getString("board_num")));
-				temp.setUserid(rs.getString("userid"));
-				temp.setTitle(rs.getString("title"));
-				temp.setWriter(rs.getString("writer"));
+				temp.setUserid(rs.getString("board_userid"));
+				temp.setKinds(rs.getString("board_kinds"));
+				temp.setTitle(rs.getString("board_title"));
 				temp.setContent(rs.getString("content"));
-				temp.setWriteday(rs.getDate("writeday"));
+				temp.setFileName(rs.getString("board_filename"));
+				temp.setWriteday(rs.getTimestamp("board_writeday"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -74,16 +76,17 @@ public class BoardDAO {
 	}
 	
 	public void insertBoard(Board temp) {
-		String sql="insert into board values(board_num_seq,?,?,?,?,sysdate)";
+		String sql="insert into board values(board_num_seq,?,?,?,?,?,sysdate)";
 		Connection conn = null;
 		PreparedStatement pstmt=null;
 		try {
 			conn=getConnection();
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, temp.getUserid());
-			pstmt.setString(2, temp.getTitle());
-			pstmt.setString(3, temp.getWriter());
+			pstmt.setString(2, temp.getKinds());
+			pstmt.setString(3, temp.getTitle());
 			pstmt.setString(4, temp.getContent());
+			pstmt.setString(5, temp.getFileName());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

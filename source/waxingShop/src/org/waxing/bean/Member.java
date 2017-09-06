@@ -6,7 +6,7 @@ public class Member {
 	private String id;
 	private String pwd;
 	private String name;
-	private String identify;
+	private String identification;
 	private Date birth;
 	private String phone;
 	private int prefer_doc;
@@ -31,11 +31,11 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getIdentify() {
-		return identify;
+	public String getIdentification() {
+		return identification;
 	}
-	public void setIdentify(String identify) {
-		this.identify = identify;
+	public void setIdentification(String identification) {
+		this.identification = identification;
 	}
 	public Date getBirth() {
 		return birth;
@@ -68,6 +68,4 @@ public class Member {
 	public void setStaff(Staff staff) {
 		this.staff = staff;
 	}
-	
-	
 }

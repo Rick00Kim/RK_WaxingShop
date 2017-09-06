@@ -1,15 +1,15 @@
 package org.waxing.bean;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Board {
 	private int board_num;
 	private String userid;
 	private String kinds;
 	private String title;
-	private String writer;
 	private String content;
-	private Date writeday;
+	private String fileName;
+	private Timestamp writeday;
 	
 	public int getBoard_num() {
 		return board_num;
@@ -35,11 +35,18 @@ public class Board {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getWriter() {
-		return writer;
+	
+	public String getFileName() {
+		return fileName;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public Timestamp getWriteday() {
+		return writeday;
+	}
+	public void setWriteday(Timestamp writeday) {
+		this.writeday = writeday;
 	}
 	public String getContent() {
 		return content;
@@ -47,12 +54,4 @@ public class Board {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getWriteday() {
-		return writeday;
-	}
-	public void setWriteday(Date writeday) {
-		this.writeday = writeday;
-	}
-	
-	
 }

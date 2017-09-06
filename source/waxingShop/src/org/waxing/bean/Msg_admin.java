@@ -1,6 +1,6 @@
 package org.waxing.bean;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Msg_admin {
 	private int msg_num;
@@ -8,7 +8,7 @@ public class Msg_admin {
 	private String title;
 	private String content;
 	private int ref_msg;
-	private Date send_date;
+	private Timestamp send_date;
 	
 	public int getMsg_num() {
 		return msg_num;
@@ -40,12 +40,11 @@ public class Msg_admin {
 	public void setRef_msg(int ref_msg) {
 		this.ref_msg = ref_msg;
 	}
-	public Date getSend_date() {
+	public Timestamp getSend_date() {
 		return send_date;
 	}
-	public void setSend_date(Date send_date) {
+	public void setSend_date(Timestamp send_date) {
 		this.send_date = send_date;
 	}
-	
 	
 }

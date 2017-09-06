@@ -2,7 +2,7 @@ insert into department values(1,'surger',210);
 
 insert into staff values(1,'Staff01',9,'Hello! My client',1);
 
-insert into member values('a01','1111','Rick','910819-111111','1991-08-19','010-8546-1991',1,'client');
+insert into member values('a01','1111','Rick','910819-111111','1991-08-19','dreamx119@gmail.com','010-8546-1991',1,'client');
 
 
 

@@ -4,7 +4,7 @@ public class Staff {
 	private int staff_num;
 	private String staff_name;
 	private int career;
-	private String comment;
+	private String detail;
 	private int depart;
 	private Department department;
 	
@@ -14,7 +14,6 @@ public class Staff {
 	public void setStaff_num(int staff_num) {
 		this.staff_num = staff_num;
 	}
-	
 	public String getStaff_name() {
 		return staff_name;
 	}
@@ -27,11 +26,11 @@ public class Staff {
 	public void setCareer(int career) {
 		this.career = career;
 	}
-	public String getComment() {
-		return comment;
+	public String getDetail() {
+		return detail;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 	public int getDepart() {
 		return depart;
