@@ -74,4 +74,16 @@ create table reply(
 	FOREIGN KEY (ref_board_num) REFERENCES board(board_num),
 	FOREIGN KEY (reply_userid) REFERENCES member(id)
 );
-
+create table department(
+	depart_num number primary key,
+	kind varchar2(20),
+	basic_pay number
+);
+create table staff(
+	staff_num number primary key,
+	staff_name varchar2(20),
+	career number(10),
+	detail varchar2(150),
+	depart number(10),
+	FOREIGN KEY (depart) REFERENCES department(depart_num)
+);

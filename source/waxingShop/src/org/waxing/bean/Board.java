@@ -9,7 +9,7 @@ public class Board {
 	private String title;
 	private String content;
 	private String fileName;
-	private Timestamp writeday;
+	private Timestamp writedate;
 	
 	public int getBoard_num() {
 		return board_num;
@@ -42,16 +42,17 @@ public class Board {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	public Timestamp getWriteday() {
-		return writeday;
-	}
-	public void setWriteday(Timestamp writeday) {
-		this.writeday = writeday;
-	}
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public Timestamp getWritedate() {
+		return writedate;
+	}
+	public void setWritedate(Timestamp writedate) {
+		this.writedate = writedate;
+	}
+	
 }

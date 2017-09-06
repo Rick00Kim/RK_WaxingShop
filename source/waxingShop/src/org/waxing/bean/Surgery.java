@@ -4,7 +4,7 @@ public class Surgery {
 	private int sur_num;
 	private String name;
 	private String sur_content;
-	private int number;
+	private int price;
 	private String kinds;
 	
 	public int getSur_num() {
@@ -25,11 +25,12 @@ public class Surgery {
 	public void setSur_content(String sur_content) {
 		this.sur_content = sur_content;
 	}
-	public int getNumber() {
-		return number;
+	
+	public int getPrice() {
+		return price;
 	}
-	public void setNumber(int number) {
-		this.number = number;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	public String getKinds() {
 		return kinds;

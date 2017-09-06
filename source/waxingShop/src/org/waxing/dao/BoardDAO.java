@@ -32,7 +32,7 @@ public class BoardDAO {
 				temp.setTitle(rs.getString("board_title"));
 				temp.setContent(rs.getString("content"));
 				temp.setFileName(rs.getString("board_filename"));
-				temp.setWriteday(rs.getTimestamp("board_writeday"));
+				temp.setWritedate(rs.getTimestamp("board_writedate"));
 				list.add(temp);
 			}
 		}catch(SQLException e) {
@@ -63,7 +63,7 @@ public class BoardDAO {
 				temp.setTitle(rs.getString("board_title"));
 				temp.setContent(rs.getString("content"));
 				temp.setFileName(rs.getString("board_filename"));
-				temp.setWriteday(rs.getTimestamp("board_writeday"));
+				temp.setWritedate(rs.getTimestamp("board_writedate"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
