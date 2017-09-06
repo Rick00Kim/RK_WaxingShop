@@ -1,6 +1,6 @@
 package org.waxing.bean;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Board {
 	private int board_num;
@@ -9,7 +9,7 @@ public class Board {
 	private String title;
 	private String writer;
 	private String content;
-	private Date writeday;
+	private Timestamp writeday;
 	
 	public int getBoard_num() {
 		return board_num;
@@ -47,10 +47,10 @@ public class Board {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getWriteday() {
+	public Timestamp getWriteday() {
 		return writeday;
 	}
-	public void setWriteday(Date writeday) {
+	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
 	}
 	

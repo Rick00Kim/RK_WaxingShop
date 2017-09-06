@@ -31,7 +31,7 @@ public class BoardDAO {
 				temp.setTitle(rs.getString("title"));
 				temp.setWriter(rs.getString("writer"));
 				temp.setContent(rs.getString("content"));
-				temp.setWriteday(rs.getDate("writeday"));
+				temp.setWriteday(rs.getTimestamp("writeday"));
 				list.add(temp);
 			}
 		}catch(SQLException e) {
@@ -61,7 +61,7 @@ public class BoardDAO {
 				temp.setTitle(rs.getString("title"));
 				temp.setWriter(rs.getString("writer"));
 				temp.setContent(rs.getString("content"));
-				temp.setWriteday(rs.getDate("writeday"));
+				temp.setWriteday(rs.getTimestamp("writeday"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

@@ -62,10 +62,9 @@ create table department(
 );
 create table staff(
 	staff_num number primary key,
-	name varchar2(20),
+	staff_name varchar2(20),
 	career number(10),
 	detail varchar2(150),
 	depart number(10),
 	FOREIGN KEY (depart) REFERENCES department(depart_num)
 );
-

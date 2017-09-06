@@ -6,6 +6,7 @@ public class Member_stastic {
 	private int total_point;
 	private int visit_count;
 	private Member member;
+	
 	public String getUserid() {
 		return userid;
 	}
