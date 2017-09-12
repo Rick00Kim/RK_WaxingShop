@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Login For Kururu WaxingShop</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#id_check").click(function(){
+					$ajax({
+						url:"/waxingShop/idCheck.do",
+						data : ({userid : $('input[name=id]').val()}),
+						success : function(data){
+							if(jQuery.trim(data)){
+								alert('사용가능');
+								$('input[name=h_id]').val(userid);
+							}else{
+								alert('이미 사용중입니다.');
+								$('input[name=id]').val('');
+								$('input[name=id]').focus();
+							}
+						}});
+				});
+
+			});
+			function joinConfirm(){
+				var form=document.joinFrame;
+				if(!form.id.value){
+					alert('PLZ Input Your ID');
+					return false;
+				}
+				if(!form.h_id.value){
+					alert("Confirm ID_CHECK");
+					return false;
+				}
+				if(!form.pwd.value){
+					alert("Input Password");
+					return false;
+				}
+				if(!form.name.value){
+					alert("Input Name");
+					return false;
+				}
+				if(!form.identify.value){
+					alert("Input Identification Number");
+					return false;
+				}
+				if(!form.email.value){
+					alert("Input Email");
+					return false;
+				}
+				if(!form.phone.value){
+					alert("Input Phone Number");
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+				<header id="header" class="alt">
+					<a href="index.html" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+
+			<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing.html">Center Information</a></li>
+						<li><a href="generic.html">Surgery Information</a></li>
+						<li><a href="elements.html">Reservation</a></li>
+						<li><a href="elements.html">Board</a></li>
+						<li><a href="elements.html">My page</a></li>
+
+					</ul>
+					<ul class="actions vertical">
+						<li><a href="#" class="button special fit">About Waxing?</a></li>
+						<li><a href="#" class="button fit">Log In</a></li>
+					</ul>
+				</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+				<div id="main">
+					<section id="banner" class="style1">
+							<span class="image">
+								<img src="images/banner6.gif" alt="" />
+							</span>
+							<div class="inner" style="border:dotted black 7px; background:rgb(35, 52, 111); opacity:0.95; border-radius:4em;">
+								<div><h1 align="center">Join Us~!!</h1></div>
+								<div class="row" style="margin:10px;">
+								<div class="7u 12u$(small)">
+									<section style="margin:2%;">
+										<form action="#" method="post" name="joinFrame">
+											<table class="table">
+												<tr>
+													<th>
+														<label for="#" style="font-size:20px;">ID</label>
+													</th>
+													<td>
+														<input type="text" name="id" placeholder="Please Input Your ID" style="width:15em;">
+														<input type="hidden" name="h_id">
+													</td>
+													<td>
+														<button type="button special" id="id_check" style="width:70pt; height:40pt; font-size:9px;">Check</button>
+													</td>
+												</tr>
+												<tr>
+													<th>
+														<label for="#" style="font-size:20px;">PW</label>
+													</th>
+													<td colspan="2">
+														<input type="password" name="pwd" placeholder="Please Input Your PASSWORD"style="width:20em;">
+													</td>
+												</tr>
+												<tr>
+													<th>
+														<label for="#" style="font-size:20px;">Name</label>
+													</th>
+													<td colspan="2">
+														<input type="text" name="Name" placeholder="Please Input Your Name"style="width:20em;">
+													</td>
+												</tr>
+												<tr>
+													<th>
+														<label for="#" style="font-size:20px;">ID_Number</label>
+													</th>
+													<td colspan="2">
+														<input type="text" name="identify" placeholder="Please Input Your Identification"style="width:20em;">
+													</td>
+												</tr>
+												<tr>
+													<th>
+														<label for="#" style="font-size:20px;">Email</label>
+													</th>
+													<td colspan="2">
+														<input type="text" name="email" placeholder="Please Input Your Email"style="width:20em;">
+													</td>
+												</tr>
+												<tr>
+													<th>
+														<label for="#" style="font-size:20px;">Phone</label>
+													</th>
+													<td colspan="2">
+														<input type="text" name="phone" placeholder="Please Input Your Phone"style="width:20em;">
+													</td>
+												</tr>
+											</table>
+											<button class="button fit" onclick="return joinConfirm();">Let`s Join</button>
+									</section>
+								</div>
+								<div class="5u 12u$(small)">
+									<section style="border:dotted white 3px;">
+										<h3>Waxing 시술자 명단</h3>
+										<p>상담 또는 시술 받고자 하는 닥터를 고르세요</p>
+										<div class="row" style="margin:10%;">
+											<section class="row">
+												<div class="8u 12u$(small)">
+													<input type="radio" name="prefer" value="1" id="a1" checked><label for="a1">Jackson</label>
+													<p>베테랑입니다.</p>
+												</div>
+												<div class="4u 12u$(small)">
+													<img src="images/pic09.jpg" alt="" style="height:80pt;">
+												</div>
+											</section>
+											<section class="row">
+												<div class="8u 12u$(small)">
+													<input type="radio" name="prefer" value="2" id="a2" ><label for="a2">Elvis</label>
+													<p>베테랑입니다.</p>
+												</div>
+												<div class="4u 12u$(small)">
+													<img src="images/pic09.jpg" alt="" style="height:80pt;">
+												</div>
+											</section><section class="row">
+												<div class="8u 12u$(small)">
+													<input type="radio" name="prefer" value="3" id="a3" ><label for="a3">Julia</label>
+													<p>베테랑입니다.</p>
+												</div>
+												<div class="4u 12u$(small)">
+													<img src="images/pic09.jpg" alt="" style="height:80pt;">
+												</div>
+											</section>
+										</div>
+									</section>
+										</div>
+								</form>
+								</div>
+							</div>
+							</div>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

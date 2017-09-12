@@ -4,7 +4,7 @@ drop table surgery;
 create table surgery(
 	surgery_num number primary key,
 	surgery_name varchar2(30),
-	surgery_content varchar2(30),
+	surgery_content varchar2(200),
 	surgery_price number,
 	surgery_kinds varchar2(30)
 );
