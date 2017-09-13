@@ -14,11 +14,13 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
-				<header id="header" class="alt">
+				<div id="wrapper">
+				<!-- Header -->
+					<header id="header" class="alt">
 						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
 						<nav>
 							<c:if test="${!empty loginUser }">
-								<a href="#"><label for="userName">Welcome ${loginUser.name }</label></a>&nbsp;&copy;&nbsp;
+								Welcome &nbsp;<u>${loginUser.name }</u>&nbsp;&copy;&nbsp;
 							</c:if>
 							<c:if test="${empty loginUser }">
 								<a href="/waxingShop/waxing/member/loginForm.jsp"><font size="4px">Login</font></a>&nbsp;&copy;&nbsp;
@@ -26,20 +28,28 @@
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
 							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
+						</c:if>
 							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
+						</c:if>
 						</ul>
 						<ul class="actions vertical">
 							<li><a href="/waxingShop/waxing/aboutWaxing/aboutWaxing.jsp" class="button special fit">About Waxing?</a></li>
-							<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button fit">Log In</a></li>
+							<c:if test="${empty loginUser }">
+								<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button fit">Log In</a></li>
+							</c:if>
+							<c:if test="${!empty loginUser }">
+								<li><a href="/waxingShop/logout.do" class="button fit">Log Out</a></li>
+							</c:if>
 						</ul>
 					</nav>
 
