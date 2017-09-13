@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -14,28 +15,34 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-				<header id="header">
-					<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
-					<nav>
-						<a href="#menu">Menu</a>
-					</nav>
-				</header>
+				<header id="header" class="alt">
+						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
+						<nav>
+							<c:if test="${!empty loginUser }">
+								<a href="#"><label for="userName">Welcome ${loginUser.name }</label></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<c:if test="${empty loginUser }">
+								<a href="/waxingShop/waxing/member/loginForm.jsp"><font size="4px">Login</font></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
 
-			<!-- Menu -->
-				<nav id="menu">
-					<ul class="links">
-						<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
-						<li><a href="landing.html">Center Information</a></li>
-						<li><a href="generic.html">Surgery Information</a></li>
-						<li><a href="elements.html">Reservation</a></li>
-						<li><a href="elements.html">Board</a></li>
-						<li><a href="elements.html">My page</a></li>
-					</ul>
-					<ul class="actions vertical">
-						<li><a href="aboutWaxing.html" class="button special fit">About Waxing?</a></li>
-						<li><a href="#" class="button fit">Log In</a></li>
-					</ul>
-				</nav>
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
+							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
+							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
+							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="/waxingShop/waxing/aboutWaxing/aboutWaxing.jsp" class="button special fit">About Waxing?</a></li>
+							<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
 
 
 				<!-- Main -->
@@ -57,19 +64,17 @@
 					</div>
 				<!-- Footer -->
 					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/GuruGuruMon" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Rick00Kim" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Kururu WaxingShop Made by Rick</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
 
 			</div>
 

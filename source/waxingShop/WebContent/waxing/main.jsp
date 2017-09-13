@@ -16,6 +16,12 @@
 					<header id="header" class="alt">
 						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
 						<nav>
+							<c:if test="${!empty loginUser }">
+								<a href="#"><label for="userName">Welcome ${loginUser.name }</label></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<c:if test="${empty loginUser }">
+								<a href="/waxingShop/waxing/member/loginForm.jsp"><font size="4px">Login</font></a>&nbsp;&copy;&nbsp;
+							</c:if>
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
@@ -25,14 +31,19 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="generic.html">Surgery Information</a></li>
-							<li><a href="elements.html">Reservation</a></li>
-							<li><a href="elements.html">Review Waxing</a></li>
-							<li><a href="elements.html">My page</a></li>
+							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
+							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</ul>
 						<ul class="actions vertical">
-							<li><a href="aboutWaxing.html" class="button special fit">About Waxing?</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
+							<li><a href="/waxingShop/waxing/aboutWaxing/aboutWaxing.jsp" class="button special fit">About Waxing?</a></li>
+							<c:if test="${empty loginUser }">
+								<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button fit">Log In</a></li>
+							</c:if>
+							<c:if test="${!empty loginUser }">
+								<li><a href="/waxingShop/logout.do" class="button fit">Log Out</a></li>
+							</c:if>
 						</ul>
 					</nav>
 
@@ -64,7 +75,7 @@
 										<img src="/waxingShop/images/tile01.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="aboutWaxing.html" class="link">About Waxing?</a></h3>
+										<h3><a href="/waxingShop/waxing/aboutWaxing/aboutWaxing.jsp" class="link">About Waxing?</a></h3>
 										<p>왁싱을 했을때의 좋은 점</p>
 									</header>
 								</article>
@@ -73,7 +84,7 @@
 										<img src="/waxingShop/images/tile02.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="center_information.html" class="link">센터 소개</a></h3>
+										<h3><a href="/waxingShop/waxing/center_Information/center_information.jsp" class="link">센터 소개</a></h3>
 										<p>센터의 소개 및 이용 방법을 알려드립니다.</p>
 									</header>
 								</article>
@@ -82,7 +93,7 @@
 										<img src="/waxingShop/images/tile03.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="surgeryList.html" class="link">시술 예약</a></h3>
+										<h3><a href="/waxingShop/waxing/surgery/surgeryList.jsp" class="link">시술 예약</a></h3>
 										<p>시술 목록확인 및 시술 예약을 도와 드립니다.</p>
 									</header>
 								</article>
@@ -91,7 +102,7 @@
 										<img src="/waxingShop/images/tile04.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="reservationList.html" class="link">예약 현황</a></h3>
+										<h3><a href="/waxingShop/waxing/reserve/reservationList.jsp" class="link">예약 현황</a></h3>
 										<p>회원님의 현재까지 받은 시술 내역 및 예약현황입니다.</p>
 									</header>
 								</article>
@@ -100,7 +111,7 @@
 										<img src="/waxingShop/images/tile05.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="reviewBoard.html" class="link">이용 후기</a></h3>
+										<h3><a href="/waxingShop/waxing/review/reviewList.jsp" class="link">이용 후기</a></h3>
 										<p>고객님들의 시술 후기입니다.</p>
 									</header>
 								</article>
@@ -109,7 +120,7 @@
 										<img src="/waxingShop/images/tile06.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="memberinfomation.html" class="link">My Page</a></h3>
+										<h3><a href="/waxingShop/waxing/member/memberInfo.jsp" class="link">My Page</a></h3>
 										<p>회원님의 정보를 수정, 삭제 그리고 샵의 이용 내역입니다.</p>
 									</header>
 								</article>
@@ -144,7 +155,7 @@
 									<p>꾸루루 왁싱샵은 항상 회원님의 편의를 생각하고 Waxing 입문자에게는 철저히 비밀 유지와 처음 시도하는 부담감 없이 원할히 시술 받을 수 있도록 도와드립니다.<br/>
 										그리고, 회원님의 철저한 관리와 다양한 서비스를 제공하고자 노력하겠습니다.   감사합니다.</p>
 									<ul class="actions">
-										<li><a href="landing.html" class="button next">회원가입 하기</a></li>
+										<li><a href="/waxingShop/waxing/member/memberJoinForm.jsp" class="button next">회원가입 하기</a></li>
 									</ul>
 								</div>
 							</section>
@@ -205,17 +216,17 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://www.facebook.com/GuruGuruMon" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="https://github.com/Rick00Kim" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Kururu WaxingShop Made by Rick</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/GuruGuruMon" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Rick00Kim" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Kururu WaxingShop Made by Rick</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
 			</div>
 
 		<!-- Scripts -->

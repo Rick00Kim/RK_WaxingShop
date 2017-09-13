@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Generic - Forty by HTML5 UP</title>
+		<title>Surgery List</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
@@ -14,7 +13,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
-					<header id="header" class="alt">
+				<header id="header" class="alt">
 						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
 						<nav>
 							<c:if test="${!empty loginUser }">
@@ -44,75 +43,95 @@
 					</nav>
 
 				<!-- Main -->
-					<div id="main">
-
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h1>센터 및 시설 소개</h1>
-									</header>
-									<section id="two" class="spotlights">
-										<section>
-											<a href="#;" class="image">
-												<img src="/waxingShop/images/infor1.jpg" alt="" data-position="center center"/>
-											</a>
-											<div class="content">
-												<div class="inner">
-													<header class="major">
-														<h3>센터 입구</h3>
-													</header>
-													<p>매장에 입장 시, 가장 먼저 고객님을 반기는 카운터가 준비되어 있으며
-														보다 안락한 분위기를 연출하기 위해 노력하고 있습니다.</p>
-												</div>
-											</div>
-										</section>
-										<section>
-											<a href="#;" class="image">
-												<img src="/waxingShop/images/infor2.jpg" alt="" data-position="center center" />
-											</a>
-											<div class="content">
-												<div class="inner">
-													<header class="major">
-														<h3>고객 편의 시설</h3>
-													</header>
-														<p>시술을 기다리는 과정에서 지루하지 않도록 커피, 간식, 잡지 등을
-															제공하고 있습니다. </p>
-												</div>
-											</div>
-										</section>
-										<section>
-											<a href="#;" class="image">
-												<img src="/waxingShop/images/infor3.jpg" alt="" data-position="center center" />
-											</a>
-											<div class="content">
-												<div class="inner">
-													<header class="major">
-														<h3>시술 장소</h3>
-													</header>
-													<p>꾸루루 왁싱샵은 고객님이 불쾌해 하지 않도록 국내 최고 시술 환경을 조성하고 있습니다.</p>
-												</div>
-											</div>
-										</section>
-										<section>
-											<a href="#;" class="image">
-												<img src="/waxingShop/images/infor4.jpg" alt="" data-position="center center" />
-											</a>
-											<div class="content">
-												<div class="inner">
-													<header class="major">
-														<h3>샤워실</h3>
-													</header>
-													<p>브라질리언 왁싱 시술 이후에는 시술 부위가 민감한 상태가 되어집니다.
-														그에 따라 고객님에게 보다 안전하고 쾌적한 환경의 샤워실을 제공합니다.</p>
-												</div>
-											</div>
-										</section>
+				<div id="main" class="alt">
+					<!-- One -->
+					<section id="one">
+						<div class="inner">
+							<header class="major">
+								<h1>꾸루루 왁싱샵 시술 내용</h1>
+							</header>
+						<!--Menu List Start-->
+						<div class="row" >
+						<div class="6u 12u$(small) spotlights">
+							<header class="major">
+								<h3>Man Surgery</h3>
+							</header>
+							<section style="background-color: #c1a2a2; ">
+								<div class="image">
+									<img src="/waxingShop/images/man_AllNude.jpg" height="200" alt="" data-position="center"/>
+								</div>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h5>man_AllNude</h5>
+										</header>
+										<p></p>
+										<ul class="actions">
+											<li><a href="generic.html" class="button small">예약하기</a></li>
+										</ul>
+									</div>
 								</div>
 							</section>
-						</section>
+							<br>
+							<section style="background-color: #6e3c3c; ">
+								<div class="image">
+									<img src="/waxingShop/images/man_Strip.jpg" height="200"  alt="" data-position="center" />
+								</div>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h5>man_Strip</h5>
+										</header>
+										<p></p>
+										<ul class="actions">
+											<li><a href="generic.html" class="button small">예약하기</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="6u 12u$(small) spotlights">
+							<header class="major">
+								<h3>Woman Surgery</h3>
+							</header>
+							<section style="background-color: #cf9260; ">
+								<div class="image">
+									<img src="/waxingShop/images/woman_AllNude.jpg" height="200"  alt="" data-position="center center" />
+								</div>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h5>woman_AllNude</h5>
+										</header>
+										<p></p>
+										<ul class="actions">
+											<li><a href="generic.html" class="button small">예약하기</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<br>
+							<section style="background-color: #aca471; " >
+								<div class="image">
+									<img src="/waxingShop/images/woman_Strip.jpg" height="200"  alt="" data-position="center" />
+								</div>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h5>woman_Strip</h5>
+										</header>
+										<p></p>
+										<ul class="actions">
+											<li><a href="generic.html" class="button small">예약하기</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
 					</div>
-
+						</div>
+					</section>
+				</div>
 				<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">
@@ -126,6 +145,7 @@
 						</ul>
 					</div>
 				</footer>
+
 			</div>
 
 		<!-- Scripts -->
@@ -135,5 +155,6 @@
 			<script src="/waxingShop/assets/js/skel.min.js"></script>
 			<script src="/waxingShop/assets/js/util.js"></script>
 			<script src="/waxingShop/assets/js/main.js"></script>
+
 	</body>
 </html>

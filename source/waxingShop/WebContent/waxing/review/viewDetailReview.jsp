@@ -1,18 +1,13 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>ReviewDetail</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
 		<script type="text/javascript">
 		$(document).ready(function(){
 		    $('[data-toggle="tooltip"]').tooltip();
@@ -43,32 +38,38 @@
 			<div id="wrapper">
 				<!-- Header -->
 				<header id="header" class="alt">
-					<a href="main.html" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
-					<nav>
-						<a href="#menu">Menu</a>
-					</nav>
-				</header>
+						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
+						<nav>
+							<c:if test="${!empty loginUser }">
+								<a href="#"><label for="userName">Welcome ${loginUser.name }</label></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<c:if test="${empty loginUser }">
+								<a href="/waxingShop/waxing/member/loginForm.jsp"><font size="4px">Login</font></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
 
-			<!-- Menu -->
-				<nav id="menu">
-					<ul class="links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="center_information.html">Center Information</a></li>
-						<li><a href="surgeryList.html">Surgery Information</a></li>
-						<li><a href="reservationList.html">Reservation</a></li>
-						<li><a href="reviewList.html">Review Waxing</a></li>
-						<li><a href="mypage.html">My page</a></li>
-					</ul>
-					<ul class="actions vertical">
-						<li><a href="aboutWaxing.html" class="button special fit">About Waxing?</a></li>
-						<li><a href="login.html" class="button fit">Log In</a></li>
-					</ul>
-				</nav>
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
+							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
+							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
+							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="/waxingShop/waxing/aboutWaxing/aboutWaxing.jsp" class="button special fit">About Waxing?</a></li>
+							<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
 
 				<div id="main">
 					<section id="banner" class="style5">
 							<span class="image">
-								<img src="images/temp03.jpg" alt="" />
+								<img src="/waxingShop/images/temp03.jpg" alt="" />
 							</span>
 							<div class="inner" style="border:dotted black 7px; background:rgb(92, 128, 219); opacity:0.8; border-radius:4em;">
 								<div class="row" style="margin-top:3%; margin-bottom:3%;">
@@ -77,7 +78,7 @@
 											<h3>제목부분</h3>
 											<p align="right" style="margin-right:4%;">작성자 - 작성일</p>
 										</header>
-										<img src="images/infor4.jpg" alt="" style="width:80%; border-radius:3em; margin-left:10%;">
+										<img src="/waxingShop/images/infor4.jpg" alt="" style="width:80%; border-radius:3em; margin-left:10%;">
 										<div class="content" style=" width:95%; margin-left:10%;">
 											샤워실이 가장 마음에 들었어요...
 										</div>
@@ -117,8 +118,8 @@
 												<input type="text" class = "button fit" name="id" style="width:8em; margin-right:9px; float : left;" readonly>
 												<input type="text" class = "button fit" name="content" style="width:15em; margin-right:10px; margin-left:14px;">
 												<input type="submit" class ="button special small" value="Add" style="height:30pt; float:right;">
+											</form>
 										</footer>
-									</form>
 									</section>
 								</div>
 							</div>
@@ -143,13 +144,12 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="/waxingShop/assets/js/jquery.min.js"></script>
+			<script src="/waxingShop/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/waxingShop/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/waxingShop/assets/js/skel.min.js"></script>
+			<script src="/waxingShop/assets/js/util.js"></script>
+			<script src="/waxingShop/assets/js/main.js"></script>
 
 	</body>
 </html>

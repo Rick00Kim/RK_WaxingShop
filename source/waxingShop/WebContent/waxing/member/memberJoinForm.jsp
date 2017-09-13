@@ -1,33 +1,37 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>Login For Kururu WaxingShop</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("#id_check").click(function(){
-					$ajax({
-						type:'POST',
-						url:'/waxingShop/idCheck.do',
-						data : ({userid : $('input[name=id]').val()}),
+				$('#id_check').click(function(){
+					var id=$('#id').val();
+					$.ajax({
+						url: '/waxingShop/idCheck.do',
+						data : ({userid : id}),
 						success : function(data){
-							if($.trim(data)){
-								alert('사용가능');
-								$('input[name=h_id]').val(userid);
+							if(jQuery.trim(data)=='NO'){
+								alert('중복된 아이디가 있습니다.');
+								$('#id').val('');
+								$('#id').css({border : "2px solid pink"});
+								$('#id').focus();
 							}else{
-								alert('이미 사용중입니다.');
-								$('input[name=id]').val('');
-								$('input[name=id]').focus();
+								alert('사용 가능한 아이디입니다.');
+								$('#id').val(id);
+								$('#id').css({border : ""});
+								$('#h_id').val(id);
+								$('#pwd').focus();
 							}
-						}});
+						}
+					});
+					return false;
 				});
 			});
 			function joinConfirm(){
@@ -68,38 +72,41 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Header -->
-				<!-- Note: The "styleN" class below should match that of the banner element. -->
 				<header id="header" class="alt">
-					<a href="main.html" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
-					<nav>
-						<a href="#menu">Menu</a>
+						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
+						<nav>
+							<c:if test="${!empty loginUser }">
+								<a href="#"><label for="userName">Welcome ${loginUser.name }</label></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<c:if test="${empty loginUser }">
+								<a href="/waxingShop/waxing/member/loginForm.jsp"><font size="4px">Login</font></a>&nbsp;&copy;&nbsp;
+							</c:if>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
+							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
+							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
+							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="/waxingShop/waxing/aboutWaxing/aboutWaxing.jsp" class="button special fit">About Waxing?</a></li>
+							<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button fit">Log In</a></li>
+						</ul>
 					</nav>
-				</header>
-
-			<!-- Menu -->
-				<nav id="menu">
-					<ul class="links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="center_information.html">Center Information</a></li>
-						<li><a href="surgeryList.html">Surgery Information</a></li>
-						<li><a href="reservationList.html">Reservation</a></li>
-						<li><a href="reviewList.html">Review Waxing</a></li>
-						<li><a href="mypage.html">My page</a></li>
-					</ul>
-					<ul class="actions vertical">
-						<li><a href="aboutWaxing.html" class="button special fit">About Waxing?</a></li>
-						<li><a href="login.html" class="button fit">Log In</a></li>
-					</ul>
-				</nav>
 
 				<!-- Banner -->
 				<!-- Note: The "styleN" class below should match that of the header element. -->
 				<div id="main">
 					<section id="banner" class="style1">
 							<span class="image">
-								<img src="images/banner6.gif" alt="" />
+								<img src="/waxingShop/images/banner6.gif" alt="" />
 							</span>
 							<div class="inner" style="border:dotted black 7px; background:rgb(35, 52, 111); opacity:0.95; border-radius:4em;">
 								<div><h1 align="center">Join Us~!!</h1></div>
@@ -113,8 +120,8 @@
 														<label for="#" style="font-size:20px;">ID</label>
 													</th>
 													<td>
-														<input type="text" name="id" placeholder="Please Input Your ID" style="width:15em;">
-														<input type="hidden" name="h_id">
+														<input type="text" name="id" id="id" placeholder="Please Input Your ID" style="width:15em;">
+														<input type="hidden" name="h_id" id="h_id">
 													</td>
 													<td>
 														<button type="button special" id="id_check" style="width:70pt; height:40pt; font-size:9px;">Check</button>
@@ -125,7 +132,7 @@
 														<label for="#" style="font-size:20px;">PW</label>
 													</th>
 													<td colspan="2">
-														<input type="password" name="pwd" placeholder="Please Input Your PASSWORD"style="width:20em;">
+														<input type="password" name="pwd" id="pwd" placeholder="Please Input Your PASSWORD"style="width:20em;">
 													</td>
 												</tr>
 												<tr>
@@ -133,7 +140,7 @@
 														<label for="#" style="font-size:20px;">Name</label>
 													</th>
 													<td colspan="2">
-														<input type="text" name="Name" placeholder="Please Input Your Name"style="width:20em;">
+														<input type="text" name="name" placeholder="Please Input Your Name"style="width:20em;">
 													</td>
 												</tr>
 												<tr>
@@ -175,7 +182,7 @@
 													<p>베테랑입니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
-													<img src="images/pic09.jpg" alt="" style="height:80pt;">
+													<img src="/waxingShop/images/pic09.jpg" alt="" style="height:80pt;">
 												</div>
 											</section>
 											<section class="row">
@@ -184,7 +191,7 @@
 													<p>베테랑입니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
-													<img src="images/pic09.jpg" alt="" style="height:80pt;">
+													<img src="/waxingShop/images/pic09.jpg" alt="" style="height:80pt;">
 												</div>
 											</section><section class="row">
 												<div class="8u 12u$(small)">
@@ -192,7 +199,7 @@
 													<p>베테랑입니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
-													<img src="images/pic09.jpg" alt="" style="height:80pt;">
+													<img src="/waxingShop/images/pic09.jpg" alt="" style="height:80pt;">
 												</div>
 											</section>
 										</div>
@@ -205,13 +212,12 @@
 					</section>
 			</div>
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="/waxingShop/assets/js/jquery.min.js"></script>
+			<script src="/waxingShop/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/waxingShop/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/waxingShop/assets/js/skel.min.js"></script>
+			<script src="/waxingShop/assets/js/util.js"></script>
+			<script src="/waxingShop/assets/js/main.js"></script>
 
 	</body>
 </html>
