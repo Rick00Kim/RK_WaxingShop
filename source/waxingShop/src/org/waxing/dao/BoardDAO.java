@@ -30,7 +30,7 @@ public class BoardDAO {
 				temp.setUserid(rs.getString("board_userid"));
 				temp.setKinds(rs.getString("board_kinds"));
 				temp.setTitle(rs.getString("board_title"));
-				temp.setContent(rs.getString("content"));
+				temp.setContent(rs.getString("board_content"));
 				temp.setFileName(rs.getString("board_filename"));
 				temp.setWritedate(rs.getTimestamp("board_writedate"));
 				list.add(temp);
@@ -54,16 +54,17 @@ public class BoardDAO {
 		try {
 			conn=getConnection();
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, board_num);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				Board temp=new Board();
-				temp.setBoard_num(Integer.parseInt(rs.getString("board_num")));
-				temp.setUserid(rs.getString("board_userid"));
-				temp.setKinds(rs.getString("board_kinds"));
-				temp.setTitle(rs.getString("board_title"));
-				temp.setContent(rs.getString("content"));
-				temp.setFileName(rs.getString("board_filename"));
-				temp.setWritedate(rs.getTimestamp("board_writedate"));
+				oneBoard=new Board();
+				oneBoard.setBoard_num(Integer.parseInt(rs.getString("board_num")));
+				oneBoard.setUserid(rs.getString("board_userid"));
+				oneBoard.setKinds(rs.getString("board_kinds"));
+				oneBoard.setTitle(rs.getString("board_title"));
+				oneBoard.setContent(rs.getString("board_content"));
+				oneBoard.setFileName(rs.getString("board_filename"));
+				oneBoard.setWritedate(rs.getTimestamp("board_writedate"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -76,7 +77,7 @@ public class BoardDAO {
 	}
 	
 	public void insertBoard(Board temp) {
-		String sql="insert into board values(board_num_seq,?,?,?,?,?,sysdate)";
+		String sql="insert into board values(board_num_seq.NEXTVAL,?,?,?,?,?,sysdate)";
 		Connection conn = null;
 		PreparedStatement pstmt=null;
 		try {

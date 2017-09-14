@@ -33,7 +33,7 @@ public class MemberDAO {
 				oneMember.setPwd(rs.getString("pwd"));
 				oneMember.setName(rs.getString("name"));
 				oneMember.setIdentification(rs.getString("identification"));
-				oneMember.setBirth(rs.getDate("birth"));
+				oneMember.setEmail(rs.getString("email"));
 				oneMember.setPhone(rs.getString("phone"));
 				oneMember.setPrefer_doc(rs.getInt("prefer_surger"));
 				oneMember.setGrade(rs.getString("grade"));
@@ -105,7 +105,7 @@ public class MemberDAO {
 		return chk;
 	}
 	public void registerMember(Member newMember) {
-		String sql="insert into member values(?,?,?,?,?,?,?,1,'client')";
+		String sql="insert into member values(?,?,?,?,?,?,?,'client')";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		try {
@@ -115,7 +115,7 @@ public class MemberDAO {
 			pstmt.setString(2, newMember.getPwd());
 			pstmt.setString(3, newMember.getName());
 			pstmt.setString(4, newMember.getIdentification());
-			pstmt.setDate(5,newMember.getBirth());
+			pstmt.setString(5,newMember.getEmail());
 			pstmt.setString(6, newMember.getPhone());
 			pstmt.setInt(7, newMember.getPrefer_doc());
 			

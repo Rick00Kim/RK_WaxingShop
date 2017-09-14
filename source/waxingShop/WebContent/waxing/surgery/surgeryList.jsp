@@ -32,11 +32,11 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/surgerylist.do">Surgery Information</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
 						</c:if>
-							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/reviewlist.do">Review Waxing</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</c:if>
@@ -65,16 +65,17 @@
 							<header class="major">
 								<h3>Man Surgery</h3>
 							</header>
-							<section style="background-color: #c1a2a2; ">
-								<div class="image">
-									<img src="/waxingShop/images/man_AllNude.jpg" height="200" alt="" data-position="center"/>
+							<c:forEach var="temp" items="${man }">
+							<section style="background-color: #a1c2a2; border-radius:2em;">
+								<div class="image" style="margin:5%;">
+									<img src="/waxingShop/images/man_${temp.name }.jpg" style="border-radius:1em;" height="200" alt=""/>
 								</div>
 								<div class="content">
 									<div class="inner">
 										<header class="major">
-											<h5>man_AllNude</h5>
+											<h5>${temp.name } &nbsp; ${temp.kinds }</h5>
 										</header>
-										<p></p>
+										<p>${temp.sur_content }</p>
 										<ul class="actions">
 											<li><a href="generic.html" class="button small">예약하기</a></li>
 										</ul>
@@ -82,37 +83,23 @@
 								</div>
 							</section>
 							<br>
-							<section style="background-color: #6e3c3c; ">
-								<div class="image">
-									<img src="/waxingShop/images/man_Strip.jpg" height="200"  alt="" data-position="center" />
-								</div>
-								<div class="content">
-									<div class="inner">
-										<header class="major">
-											<h5>man_Strip</h5>
-										</header>
-										<p></p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button small">예약하기</a></li>
-										</ul>
-									</div>
-								</div>
-							</section>
+							</c:forEach>
 						</div>
 						<div class="6u 12u$(small) spotlights">
 							<header class="major">
 								<h3>Woman Surgery</h3>
 							</header>
-							<section style="background-color: #cf9260; ">
-								<div class="image">
-									<img src="/waxingShop/images/woman_AllNude.jpg" height="200"  alt="" data-position="center center" />
+							<c:forEach var="temp" items="${woman }">
+							<section style="background-color: #3B51FF; border-radius:2em;">
+								<div class="image" style="margin:5%;">
+									<img src="/waxingShop/images/woman_${temp.name }.jpg" style="border-radius:1em;" height="200" alt=""/>
 								</div>
 								<div class="content">
 									<div class="inner">
 										<header class="major">
-											<h5>woman_AllNude</h5>
+											<h5>${temp.name } &nbsp; ${temp.kinds }</h5>
 										</header>
-										<p></p>
+										<p>${temp.sur_content }</p>
 										<ul class="actions">
 											<li><a href="generic.html" class="button small">예약하기</a></li>
 										</ul>
@@ -120,22 +107,7 @@
 								</div>
 							</section>
 							<br>
-							<section style="background-color: #aca471; " >
-								<div class="image">
-									<img src="/waxingShop/images/woman_Strip.jpg" height="200"  alt="" data-position="center" />
-								</div>
-								<div class="content">
-									<div class="inner">
-										<header class="major">
-											<h5>woman_Strip</h5>
-										</header>
-										<p></p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button small">예약하기</a></li>
-										</ul>
-									</div>
-								</div>
-							</section>
+							</c:forEach>
 						</div>
 					</div>
 						</div>

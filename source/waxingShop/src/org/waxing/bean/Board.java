@@ -54,5 +54,10 @@ public class Board {
 	public void setWritedate(Timestamp writedate) {
 		this.writedate = writedate;
 	}
+	@Override
+	public String toString() {
+		return "Board [board_num=" + board_num + ", userid=" + userid + ", kinds=" + kinds + ", title=" + title
+				+ ", content=" + content + ", fileName=" + fileName + ", writedate=" + writedate + "]";
+	}
 	
 }

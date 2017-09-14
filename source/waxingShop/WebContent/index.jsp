@@ -24,7 +24,6 @@
           <ul class="actions">
             <li><a href="waxing/main.jsp" class="button next scrolly">입장하기</a></li>
           </ul>
-
         </div>
       </section>
     </div>

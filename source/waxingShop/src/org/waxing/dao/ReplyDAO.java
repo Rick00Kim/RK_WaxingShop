@@ -29,9 +29,9 @@ public class ReplyDAO {
 				Reply temp=new Reply();
 				temp.setReply_num(Integer.parseInt(rs.getString("reply_num")));
 				temp.setRef_board_num(Integer.parseInt(rs.getString("ref_board_num")));
-				temp.setUserid(rs.getString("userid"));
-				temp.setRep_content(rs.getString("rep_content"));
-				temp.setReplydate(rs.getDate("replydate"));
+				temp.setUserid(rs.getString("reply_userid"));
+				temp.setRep_content(rs.getString("reply_content"));
+				temp.setReplydate(rs.getDate("reply_writedate"));
 				list.add(temp);
 			}
 		}catch(SQLException e) {
@@ -44,7 +44,7 @@ public class ReplyDAO {
 		return list;
 	}
 	public void insertReply(Reply temp) {
-		String sql="insert into reply values(reply_num_seq,?,?,?,sysdate)";
+		String sql="insert into reply values(reply_num_seq.NEXTVAL,?,?,?,sysdate)";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		try {
