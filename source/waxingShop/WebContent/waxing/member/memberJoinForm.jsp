@@ -202,7 +202,7 @@
 											<section class="row">
 												<div class="8u 12u$(small)">
 													<input type="radio" name="prefer" value="1" id="a1" ><label for="a1">Jack</label>
-													<p>베테랑입니다.</p>
+													<p>친절히 모시겠습니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
 													<img src="/waxingShop/images/staff01.jpg" alt="" style="height:100pt;">
@@ -211,7 +211,7 @@
 											<section class="row" style="margin-top:15px;">
 												<div class="8u 12u$(small)">
 													<input type="radio" name="prefer" value="2" id="a2" ><label for="a2">Elvis</label>
-													<p>베테랑입니다.</p>
+													<p>8년 경력을 살려 좋은 서비스를 할 수 있도록 하겠습니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
 													<img src="/waxingShop/images/staff02.jpg" alt="" style="height:100pt;">
@@ -220,7 +220,7 @@
 											<section class="row" style="margin-top:15px;">
 												<div class="8u 12u$(small)">
 													<input type="radio" name="prefer" value="3" id="a3" ><label for="a3">Julia</label>
-													<p>베테랑입니다.</p>
+													<p>항상 고객님을 위해서 일을 하겟습니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
 													<img src="/waxingShop/images/staff03.jpg" alt="" style="height:100pt;">

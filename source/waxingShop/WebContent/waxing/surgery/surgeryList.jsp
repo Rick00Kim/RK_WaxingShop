@@ -75,7 +75,8 @@
 										<header class="major">
 											<h5>${temp.name } &nbsp; ${temp.kinds }</h5>
 										</header>
-										<p>${temp.sur_content }</p>
+										<p>${temp.sur_content }</p><br>
+											<strong>${temp.price }원</strong>
 										<ul class="actions">
 											<li><a href="generic.html" class="button small">예약하기</a></li>
 										</ul>
@@ -99,7 +100,8 @@
 										<header class="major">
 											<h5>${temp.name } &nbsp; ${temp.kinds }</h5>
 										</header>
-										<p>${temp.sur_content }</p>
+										<p>${temp.sur_content }</p><br>
+											<strong>${temp.price }원</strong>
 										<ul class="actions">
 											<li><a href="generic.html" class="button small">예약하기</a></li>
 										</ul>

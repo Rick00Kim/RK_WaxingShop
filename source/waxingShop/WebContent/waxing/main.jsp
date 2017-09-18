@@ -126,7 +126,7 @@
 										<p>회원님의 정보를 수정, 삭제 그리고 샵의 이용 내역입니다.</p>
 									</header>
 								</article>
-								<c:if test="${!empty adminUser }">
+								<c:if test="${loginUser.grade eq 'admin' }">
 								<article>
 									<span class="image">
 										<img src="/waxingShop/images/tile07.jpg" alt="" />
