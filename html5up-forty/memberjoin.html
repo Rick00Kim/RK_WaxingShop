@@ -101,19 +101,64 @@
 							<span class="image">
 								<img src="images/banner6.gif" alt="" />
 							</span>
-							<div class="inner" style="border:dotted black 7px; background:rgb(35, 52, 111); opacity:0.95; border-radius:4em;">
+							<div class="inner" style="border:dotted black 7px; background:rgb(68, 77, 162); opacity:0.95; border-radius:4em;">
 								<div><h1 align="center">Join Us~!!</h1></div>
 								<div class="row" style="margin:10px;">
+									<div class="5u 12u$(small)">
+										<div class="table-wrapper">
+											<table>
+												<tr>
+													<td>
+														<div align="center">
+															<input type="radio" name="chk_prefer" value="1" id="a1">
+															<label for="a1">
+																maria
+																<img src="images/parti01.jpg" alt="" style="width:30%;">
+															</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div align="center">
+															<input type="radio" name="chk_prefer" value="2" id="a2" style="margin-left:5%;">
+															<label for="a2">
+																jack
+																<img src="images/parti02.jpg" alt="" style="width:30%;" >
+															</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div align="center">
+															<input type="radio" name="chk_prefer" value="3" id="a3">
+															<label for="a3">
+																simsons
+																<img src="images/parti03.jpg" alt="" style="width:30%;">
+															</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<button class="button fit" name="slt_prefer" onclick="return chk_prefer();">Select Waxer</button>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
 								<div class="7u 12u$(small)">
 									<section style="margin:2%;">
 										<form action="#" method="post" name="joinFrame">
-											<table class="table">
+											<div class="table-wrapper">
+											<table>
 												<tr>
 													<th>
 														<label for="#" style="font-size:20px;">ID</label>
 													</th>
 													<td>
-														<input type="text" name="id" placeholder="Please Input Your ID" style="width:15em;">
+														<input type="text" name="id" placeholder="Please Input Your ID">
 														<input type="hidden" name="h_id">
 													</td>
 													<td>
@@ -125,7 +170,7 @@
 														<label for="#" style="font-size:20px;">PW</label>
 													</th>
 													<td colspan="2">
-														<input type="password" name="pwd" placeholder="Please Input Your PASSWORD"style="width:20em;">
+														<input type="password" name="pwd" placeholder="Please Input Your PASSWORD">
 													</td>
 												</tr>
 												<tr>
@@ -133,7 +178,7 @@
 														<label for="#" style="font-size:20px;">Name</label>
 													</th>
 													<td colspan="2">
-														<input type="text" name="Name" placeholder="Please Input Your Name"style="width:20em;">
+														<input type="text" name="Name" placeholder="Please Input Your Name">
 													</td>
 												</tr>
 												<tr>
@@ -141,7 +186,7 @@
 														<label for="#" style="font-size:20px;">ID_Number</label>
 													</th>
 													<td colspan="2">
-														<input type="text" name="identify" placeholder="Please Input Your Identification"style="width:20em;">
+														<input type="text" name="identify" placeholder="Please Input Your Identification">
 													</td>
 												</tr>
 												<tr>
@@ -149,7 +194,7 @@
 														<label for="#" style="font-size:20px;">Email</label>
 													</th>
 													<td colspan="2">
-														<input type="text" name="email" placeholder="Please Input Your Email"style="width:20em;">
+														<input type="text" name="email" placeholder="Please Input Your Email">
 													</td>
 												</tr>
 												<tr>
@@ -157,52 +202,19 @@
 														<label for="#" style="font-size:20px;">Phone</label>
 													</th>
 													<td colspan="2">
-														<input type="text" name="phone" placeholder="Please Input Your Phone"style="width:20em;">
+														<input type="text" name="phone" placeholder="Please Input Your Phone">
 													</td>
 												</tr>
 											</table>
 											<button class="button fit" onclick="return joinConfirm();">Let`s Join</button>
+											</div>
+										</form>
 									</section>
 								</div>
-								<div class="5u 12u$(small)">
-									<section style="border:dotted white 3px;">
-										<h3>Prefer_Waxer</h3>
-										<p>상담 또는 시술 받고자 하는 닥터를 고르세요</p>
-										<div class="row" style="margin:10%;">
-											<section class="row">
-												<div class="8u 12u$(small)">
-													<input type="radio" name="prefer" value="1" id="a1" checked><label for="a1">Jackson</label>
-													<p>베테랑입니다.</p>
-												</div>
-												<div class="4u 12u$(small)">
-													<img src="images/pic09.jpg" alt="" style="height:80pt;">
-												</div>
-											</section>
-											<section class="row">
-												<div class="8u 12u$(small)">
-													<input type="radio" name="prefer" value="2" id="a2" ><label for="a2">Elvis</label>
-													<p>베테랑입니다.</p>
-												</div>
-												<div class="4u 12u$(small)">
-													<img src="images/pic09.jpg" alt="" style="height:80pt;">
-												</div>
-											</section><section class="row">
-												<div class="8u 12u$(small)">
-													<input type="radio" name="prefer" value="3" id="a3" ><label for="a3">Julia</label>
-													<p>베테랑입니다.</p>
-												</div>
-												<div class="4u 12u$(small)">
-													<img src="images/pic09.jpg" alt="" style="height:80pt;">
-												</div>
-											</section>
-										</div>
-									</section>
-										</div>
-								</form>
-								</div>
 							</div>
-							</div>
+						</div>
 					</section>
+				</div>
 			</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
