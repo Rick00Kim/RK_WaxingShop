@@ -7,9 +7,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
+		<script type="text/javascript">
+			function goToPage(userid){
+				if(userid==''){
+					alert('로그인 먼저 해주세요.');
+				}else{
+					alert('시술페이지로');
+				}
+			}
+		</script>
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -78,7 +86,7 @@
 										<p>${temp.sur_content }</p><br>
 											<strong>${temp.price }원</strong>
 										<ul class="actions">
-											<li><a href="generic.html" class="button small">예약하기</a></li>
+											<li><a href="javascript:goToPage('${loginUser.id }');" class="button small">예약하기</a></li>
 										</ul>
 									</div>
 								</div>
@@ -103,7 +111,7 @@
 										<p>${temp.sur_content }</p><br>
 											<strong>${temp.price }원</strong>
 										<ul class="actions">
-											<li><a href="generic.html" class="button small">예약하기</a></li>
+											<li><a href="javascript:goToPage('${loginUser.id }');" class="button small">예약하기</a></li>
 										</ul>
 									</div>
 								</div>

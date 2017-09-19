@@ -31,6 +31,7 @@ public class DetailReviewServlet extends HttpServlet {
 		
 		BoardDAO mdao=BoardDAO.getInstance();
 		Board getBoard=mdao.getOneBoard(board_num);
+		
 		ReplyDAO rdao=ReplyDAO.getInstance();
 		ArrayList<Reply> reply=rdao.getAllReply(board_num);
 		

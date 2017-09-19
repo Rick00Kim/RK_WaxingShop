@@ -23,7 +23,7 @@ create table staff(
 create table member(
 	id varchar2(25) primary key,
 	pwd varchar2(30) not null,
-	name varchar2(14) not null,
+	name varchar2(25) not null,
 	identification char(14) not null,
 	email varchar2(50),
 	phone varchar2(14),

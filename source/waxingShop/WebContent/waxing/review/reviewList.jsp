@@ -8,9 +8,18 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
+		<script type="text/javascript">
+		function userCheck(userid){
+			if(userid==''){
+				alert('로그인이 필요합니다.');
+				location.href='/waxingShop/waxing/member/loginForm.jsp';
+			}else{
+				location.href='/waxingShop/waxing/review/writeReview.jsp';
+			}
+		}
+		</script>
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -74,7 +83,8 @@
 							<h2>REVIEW</h2>
 						</div>
 						<div class="row">
-							<button onclick="location.href='/waxingShop/waxing/review/writeReview.jsp'"class="button special small" style="float:right; border-radius:10px; margin-right:5%;">Write</button>
+							<button onclick="return userCheck('${loginUser.id}');"
+							class="button special small" style="float:right; border-radius:10px; margin-right:5%;">Write</button>
 						</div>
 						<hr>
 						<div class="row">

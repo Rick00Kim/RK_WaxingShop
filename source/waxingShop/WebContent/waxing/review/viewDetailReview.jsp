@@ -30,19 +30,10 @@
 				alert('비밀번호가 다릅니다.');
 			}
 		}
-		function replyCheck(){
-			if(!document.replyFrame.id.value){
-				alert('로그인이 필요합니다.');
-				location.href='/waxingShop/waxing/member/loginForm.jsp';
-				return false;
-			}else{
-				return true;
-			}
-		}
+		
 		</script>
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -147,8 +138,6 @@
 							</div>
 					</section>
 				</div>
-
-
 				<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">
@@ -164,7 +153,6 @@
 				</footer>
 
 			</div>
-
 		<!-- Scripts -->
 			<script src="/waxingShop/assets/js/jquery.min.js"></script>
 			<script src="/waxingShop/assets/js/jquery.scrolly.min.js"></script>
@@ -172,6 +160,5 @@
 			<script src="/waxingShop/assets/js/skel.min.js"></script>
 			<script src="/waxingShop/assets/js/util.js"></script>
 			<script src="/waxingShop/assets/js/main.js"></script>
-
 	</body>
 </html>

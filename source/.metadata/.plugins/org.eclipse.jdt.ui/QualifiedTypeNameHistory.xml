@@ -13,7 +13,6 @@
 <fullyQualifiedTypeName name="org.waxing.bean.Staff"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Department"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.util.Enumeration"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
@@ -23,10 +22,11 @@
 <fullyQualifiedTypeName name="org.waxing.dao.ReplyDAO"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Reply"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Member"/>
-<fullyQualifiedTypeName name="org.waxing.dao.MemberDAO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="org.waxing.dao.SurgeryDAO"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.waxing.bean.Surgery"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="org.waxing.dao.MemberDAO"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>
