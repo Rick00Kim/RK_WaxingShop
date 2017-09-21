@@ -76,11 +76,15 @@
 											<th><label>시술 날짜</label></th>
 										</tr>
 										<!-- 내용 리스트 -->
-										<tr>
-											
-										</tr>
-										
-									</table>								
+										<c:forEach var="temp" items="${reserveList }">
+											<tr onclick="return viewDetail('${temp.reserve_num}');" >
+												<td>${temp.surgery.sur_content }</td>
+												<td>${temp.reserve_price }</td>
+												<td>${temp.staff.staff_name }</td>
+												<td>${temp.reserve_date }</td>												
+											</tr>
+										</c:forEach>
+									</table>
 								</div>
 							</div>
 							<!-- 상세정보 구간 -->
