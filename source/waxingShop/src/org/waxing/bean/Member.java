@@ -1,18 +1,16 @@
 package org.waxing.bean;
 
-import java.sql.Date;
 
 public class Member {
 	private String id;
 	private String pwd;
 	private String name;
 	private String identification;
-	private Date birth;
+	private String email;
 	private String phone;
 	private int prefer_doc;
 	private String grade;
 	private Staff staff;
-	
 	public String getId() {
 		return id;
 	}
@@ -37,13 +35,12 @@ public class Member {
 	public void setIdentification(String identification) {
 		this.identification = identification;
 	}
-	public Date getBirth() {
-		return birth;
+	public String getEmail() {
+		return email;
 	}
-	public void setBirth(Date birth) {
-		this.birth = birth;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
 	public String getPhone() {
 		return phone;
 	}
@@ -68,4 +65,6 @@ public class Member {
 	public void setStaff(Staff staff) {
 		this.staff = staff;
 	}
+	
+	
 }

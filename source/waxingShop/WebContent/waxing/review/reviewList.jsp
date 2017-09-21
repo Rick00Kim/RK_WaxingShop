@@ -8,9 +8,18 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
+		<script type="text/javascript">
+		function userCheck(userid){
+			if(userid==''){
+				alert('로그인이 필요합니다.');
+				location.href='/waxingShop/waxing/member/loginForm.jsp';
+			}else{
+				location.href='/waxingShop/waxing/review/writeReview.jsp';
+			}
+		}
+		</script>
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -33,11 +42,11 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/surgerylist.do">Surgery Information</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
 						</c:if>
-							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/reviewlist.do">Review Waxing</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</c:if>
@@ -70,18 +79,27 @@
 				<!-- Main -->
 				<div id="main" class="alt">
 					<div class="inner">
-						<h2>REVIEW</h2>
-						<!--반복문 시작-->
+						<div>
+							<h2>REVIEW</h2>
+						</div>
 						<div class="row">
-							<div class="3u 12u$(small)" style="background-color:rgb(212, 122, 159); border-radius: 1em; margin:10px; border:dashed black 0.4em; opacity:0.8;">
+							<button onclick="return userCheck('${loginUser.id}');"
+							class="button special small" style="float:right; border-radius:10px; margin-right:5%;">Write</button>
+						</div>
+						<hr>
+						<div class="row">
+						<!--반복문 시작-->
+						<c:forEach var="temp" items="${board_list }">
+							<div class="3u 12u$(small)" style="background-color:rgb(212, 122, 159); border-radius: 1em; margin:10px; opacity:0.8;">
 								<div>
-									<img src="/waxingShop/images/tile02.jpg" width="230" height="auto" alt="" style="margin-top:10px; border-radius:1em;">
+									<img src="/waxingShop/images/${temp.fileName }" width="230" height="auto" alt="" style="margin-top:10px; border-radius:1em;">
 								</div>
 								<div>
-									<p>안녕하세요 <br>- dreamx119</p>
+									<p>${temp.title } <br> - ${temp.userid }</p>
 								</div>
-								<a href="/waxingShop/waxing/review/viewDetailReview.jsp" class="button small" style="margin-bottom:10%;">Learn More</a>
+								<a href="/waxingShop/detailReview.do?num=${temp.board_num }" class="button small" style="margin-bottom:10%;">Learn More</a>
 							</div>
+						</c:forEach>
 						<!--반복문 끝-->
 						</div>
 					</div>

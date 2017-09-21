@@ -29,6 +29,11 @@
 							}
 						}});
 				});
+				$('#preferCheck').click(function(){
+					var cd = $("input:radio[name=prefer]:checked").val();
+					alert(cd+'번 Waxer를 선택하셨습니다.');
+					$('#s_prefer').val(cd);
+				});
 			});
 			function joinConfirm(){
 				var form=document.joinFrame;
@@ -194,7 +199,11 @@
 														<label for="#" style="font-size:20px;">Email</label>
 													</th>
 													<td colspan="2">
+<<<<<<< HEAD
 														<input type="text" name="email" placeholder="Please Input Your Email">
+=======
+														<input type="email" name="email" placeholder="Please Input Your Email"style="width:20em;">
+>>>>>>> 23ae545588b2928d0e3f868957a4c4f2abcbf834
 													</td>
 												</tr>
 												<tr>

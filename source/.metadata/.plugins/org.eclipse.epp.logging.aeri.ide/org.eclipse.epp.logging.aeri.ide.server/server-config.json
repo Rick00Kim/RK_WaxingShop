@@ -1,7 +1,11 @@
 {
   "version": "v1",
   "title": "Eclipse",
+<<<<<<< HEAD
   "timestamp": 1505800783278,
+=======
+  "timestamp": 1505736827335,
+>>>>>>> 23ae545588b2928d0e3f868957a4c4f2abcbf834
   "ttl": 10080,
   "helpUrl": "https://dev.eclipse.org/recommenders/community/aeri/v2/help/",
   "feedbackUrl": "http://ctrlflow.com/automated-error-reporting",

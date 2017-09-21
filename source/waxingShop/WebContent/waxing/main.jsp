@@ -30,11 +30,11 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/surgerylist.do">Surgery Information</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
 						</c:if>
-							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/reviewlist.do">Review Waxing</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</c:if>
@@ -95,7 +95,7 @@
 										<img src="/waxingShop/images/tile03.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="/waxingShop/waxing/surgery/surgeryList.jsp" class="link">시술 예약</a></h3>
+										<h3><a href="/waxingShop/surgerylist.do" class="link">시술 예약</a></h3>
 										<p>시술 목록확인 및 시술 예약을 도와 드립니다.</p>
 									</header>
 								</article>
@@ -113,7 +113,7 @@
 										<img src="/waxingShop/images/tile05.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="/waxingShop/waxing/review/reviewList.jsp" class="link">이용 후기</a></h3>
+										<h3><a href="/waxingShop/reviewlist.do" class="link">이용 후기</a></h3>
 										<p>고객님들의 시술 후기입니다.</p>
 									</header>
 								</article>
@@ -126,7 +126,7 @@
 										<p>회원님의 정보를 수정, 삭제 그리고 샵의 이용 내역입니다.</p>
 									</header>
 								</article>
-								<c:if test="${!empty adminUser }">
+								<c:if test="${loginUser.grade eq 'admin' }">
 								<article>
 									<span class="image">
 										<img src="/waxingShop/images/tile07.jpg" alt="" />
@@ -161,7 +161,7 @@
 											<li><a href="/waxingShop/waxing/member/loginForm.jsp" class="button next">로그인 하기</a></li>
 										</ul>
 										<ul class="actions">
-											<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp" class="button next">회원가입 하기</a></li>
+											<li><a href="/waxingShop/waxing/member/memberJoinForm.jsp" class="button next">회원가입 하기</a></li>
 										</ul>
 									</c:if>
 								</div>

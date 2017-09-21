@@ -33,7 +33,7 @@ public class MemberDAO {
 				oneMember.setPwd(rs.getString("pwd"));
 				oneMember.setName(rs.getString("name"));
 				oneMember.setIdentification(rs.getString("identification"));
-				oneMember.setBirth(rs.getDate("birth"));
+				oneMember.setEmail(rs.getString("email"));
 				oneMember.setPhone(rs.getString("phone"));
 				oneMember.setPrefer_doc(rs.getInt("prefer_surger"));
 				oneMember.setGrade(rs.getString("grade"));
@@ -105,7 +105,7 @@ public class MemberDAO {
 		return chk;
 	}
 	public void registerMember(Member newMember) {
-		String sql="insert into member values(?,?,?,?,?,?,?,1,'client')";
+		String sql="insert into member values(?,?,?,?,?,?,?,'client')";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		try {
@@ -115,7 +115,7 @@ public class MemberDAO {
 			pstmt.setString(2, newMember.getPwd());
 			pstmt.setString(3, newMember.getName());
 			pstmt.setString(4, newMember.getIdentification());
-			pstmt.setDate(5,newMember.getBirth());
+			pstmt.setString(5,newMember.getEmail());
 			pstmt.setString(6, newMember.getPhone());
 			pstmt.setInt(7, newMember.getPrefer_doc());
 			
@@ -160,5 +160,28 @@ public class MemberDAO {
 			if(conn!=null)close(conn);
 		}
 	}
-	
+	public String getPwd(String id) {
+		String sql="select pwd from member where id=?";
+		String userPwd=null;
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			conn=getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				userPwd=rs.getString("pwd");
+			else
+				userPwd=null;
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null)close(rs);
+			if(pstmt!=null)close(pstmt);
+			if(conn!=null)close(conn);
+		}
+		return userPwd;
+	}
 }

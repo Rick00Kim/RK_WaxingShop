@@ -33,7 +33,13 @@
 					});
 					return false;
 				});
+				$('#preferCheck').click(function(){
+					var cd = $("input:radio[name=prefer]:checked").val();
+					alert(cd+'번 Waxer를 선택하셨습니다.');
+					$('#s_prefer').val(cd);
+				});
 			});
+			
 			function joinConfirm(){
 				var form=document.joinFrame;
 				if(!form.id.value){
@@ -64,8 +70,13 @@
 					alert("Input Phone Number");
 					return false;
 				}
+				if(!form.s_prefer.value){
+					alert("Select Prefer Waxer");
+					return false;
+				}
 				return true;
 			}
+			
 		</script>
 	</head>
 	<body>
@@ -92,11 +103,11 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/surgerylist.do">Surgery Information</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
 						</c:if>
-							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/reviewlist.do">Review Waxing</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</c:if>
@@ -123,7 +134,7 @@
 								<div class="row" style="margin:10px;">
 								<div class="7u 12u$(small)">
 									<section style="margin:2%;">
-										<form action="#" method="post" name="joinFrame">
+										<form action="/waxingShop/resisterMember.do" method="post" name="joinFrame">
 											<table class="table">
 												<tr>
 													<th>
@@ -175,50 +186,57 @@
 													</th>
 													<td colspan="2">
 														<input type="text" name="phone" placeholder="Please Input Your Phone"style="width:20em;">
+														<input type="hidden" name="s_prefer" id= "s_prefer">
 													</td>
 												</tr>
 											</table>
 											<button class="button fit" onclick="return joinConfirm();">Let`s Join</button>
+										</form>
 									</section>
 								</div>
-								<div class="5u 12u$(small)">
-									<section style="border:dotted white 3px;">
+								<div class="5u 12u$(small)" style="border:dotted white 3px;">
+									<section>
 										<h3>Prefer_Waxer</h3>
 										<p>상담 또는 시술 받고자 하는 닥터를 고르세요</p>
-										<div class="row" style="margin:10%;">
+										<div style="margin-right:10%;">
 											<section class="row">
 												<div class="8u 12u$(small)">
-													<input type="radio" name="prefer" value="1" id="a1" checked><label for="a1">Jackson</label>
-													<p>베테랑입니다.</p>
+													<input type="radio" name="prefer" value="1" id="a1" ><label for="a1">Jack</label>
+													<p>친절히 모시겠습니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
-													<img src="/waxingShop/images/pic09.jpg" alt="" style="height:80pt;">
+													<img src="/waxingShop/images/staff01.jpg" alt="" style="height:100pt;">
 												</div>
 											</section>
-											<section class="row">
+											<section class="row" style="margin-top:15px;">
 												<div class="8u 12u$(small)">
 													<input type="radio" name="prefer" value="2" id="a2" ><label for="a2">Elvis</label>
-													<p>베테랑입니다.</p>
+													<p>8년 경력을 살려 좋은 서비스를 할 수 있도록 하겠습니다.</p>
 												</div>
 												<div class="4u 12u$(small)">
-													<img src="/waxingShop/images/pic09.jpg" alt="" style="height:80pt;">
-												</div>
-											</section><section class="row">
-												<div class="8u 12u$(small)">
-													<input type="radio" name="prefer" value="3" id="a3" ><label for="a3">Julia</label>
-													<p>베테랑입니다.</p>
-												</div>
-												<div class="4u 12u$(small)">
-													<img src="/waxingShop/images/pic09.jpg" alt="" style="height:80pt;">
+													<img src="/waxingShop/images/staff02.jpg" alt="" style="height:100pt;">
 												</div>
 											</section>
-										</div>
+											<section class="row" style="margin-top:15px;">
+												<div class="8u 12u$(small)">
+													<input type="radio" name="prefer" value="3" id="a3" ><label for="a3">Julia</label>
+													<p>항상 고객님을 위해서 일을 하겟습니다.</p>
+												</div>
+												<div class="4u 12u$(small)">
+													<img src="/waxingShop/images/staff03.jpg" alt="" style="height:100pt;">
+												</div>
+											</section>
+											</div>
+											<div>
+												<button type="button" class="button special fit" id="preferCheck" style="width:92%;">
+													Select Prefer_Waxer
+												</button>
+											</div>
 									</section>
-										</div>
-								</form>
+									</div>
 								</div>
 							</div>
-							</div>
+						</div>
 					</section>
 			</div>
 		<!-- Scripts -->

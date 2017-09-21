@@ -30,10 +30,10 @@
 				alert('비밀번호가 다릅니다.');
 			}
 		}
+		
 		</script>
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -56,11 +56,11 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/surgerylist.do">Surgery Information</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
 						</c:if>
-							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/reviewlist.do">Review Waxing</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</c:if>
@@ -85,12 +85,12 @@
 								<div class="row" style="margin-top:3%; margin-bottom:3%;">
 									<section class="7u 12u$(small)">
 										<header align="center" style="margin-top:2%;">
-											<h3>제목부분</h3>
-											<p align="right" style="margin-right:4%;">작성자 - 작성일</p>
+											<h3>${board.title }</h3>
+											<p align="right" style="margin-right:4%;">${board.userid } - ${board.writedate }</p>
 										</header>
-										<img src="/waxingShop/images/infor4.jpg" alt="" style="width:80%; border-radius:3em; margin-left:10%;">
+										<img src="/waxingShop/images/${board.fileName }" alt="" style="width:80%; border-radius:3em; margin-left:10%;">
 										<div class="content" style=" width:95%; margin-left:10%;">
-											샤워실이 가장 마음에 들었어요...
+											<p>${board.content }</p>
 										</div>
 									</section>
 									<section class="5u 12u$(small)" >
@@ -108,26 +108,29 @@
 												</div>
 											</section>
 											<!--반복 시작-->
+											<c:forEach var="temp" items="${reply }">
 											<a href="#" onclick="return modifyReply('1234','2');" data-toggle="tooltip" title="Reply 수정을 원하시면 클릭하십시오.">
 												<section class="row" style="font-size:18px; height:40px;">
 												<div class="3u 12u$(small)"style="height:40px;">
-													<p>Rick</p>
+													<p>${temp.userid }</p>
 												</div>
 												<div class="5u 12u$(small)" style="height:40px;">
-													<p>Hello World</p>
+													<p>${temp.rep_content }</p>
 												</div>
 												<div class="3u 12u$(small)" style="height:40px;">
-													<p>2017-09-13</p>
+													<p>${temp.replydate }</p>
 												</div>
 											</section></a>
+											</c:forEach>
 											<!--반복 끝-->
 										</div>
 										<hr>
 										<footer>
-											<form action="#" method="post" class="row" style="margin:4px;">
-												<input type="text" class = "button fit" name="id" style="width:8em; margin-right:9px; float : left;" readonly>
+											<form action="/waxingShop/addReply.do" method="post" class="row" name="replyFrame"style="margin:4px;">
+												<input type="hidden" name="ref_board_num" value="${board.board_num }">
+												<input type="text" class = "button fit" name="id" value="${loginUser.id }" style="width:8em; margin-right:9px; float : left;" readonly>
 												<input type="text" class = "button fit" name="content" style="width:15em; margin-right:10px; margin-left:14px;">
-												<input type="submit" class ="button special small" value="Add" style="height:30pt; float:right;">
+												<input type="submit" class ="button special small" onclick="return replyCheck();"value="Add" style="height:30pt; float:right;">
 											</form>
 										</footer>
 									</section>
@@ -135,8 +138,6 @@
 							</div>
 					</section>
 				</div>
-
-
 				<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">
@@ -152,7 +153,6 @@
 				</footer>
 
 			</div>
-
 		<!-- Scripts -->
 			<script src="/waxingShop/assets/js/jquery.min.js"></script>
 			<script src="/waxingShop/assets/js/jquery.scrolly.min.js"></script>
@@ -160,6 +160,5 @@
 			<script src="/waxingShop/assets/js/skel.min.js"></script>
 			<script src="/waxingShop/assets/js/util.js"></script>
 			<script src="/waxingShop/assets/js/main.js"></script>
-
 	</body>
 </html>

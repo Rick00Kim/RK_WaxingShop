@@ -35,11 +35,11 @@
 						<ul class="links">
 							<li><a href="/waxingShop/waxing/main.jsp">Home</a></li>
 							<li><a href="/waxingShop/waxing/center_Information/center_information.jsp">Center Information</a></li>
-							<li><a href="/waxingShop/waxing/surgery/surgeryList.jsp">Surgery Information</a></li>
+							<li><a href="/waxingShop/surgerylist.do">Surgery Information</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/reserve/reservationList.jsp">Reservation</a></li>
 						</c:if>
-							<li><a href="/waxingShop/waxing/review/reviewList.jsp">Review Waxing</a></li>
+							<li><a href="/waxingShop/reviewlist.do">Review Waxing</a></li>
 						<c:if test="${!empty loginUser }">
 							<li><a href="/waxingShop/waxing/member/memberInfo.jsp">My page</a></li>
 						</c:if>
