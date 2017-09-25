@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.waxing.bean.Member;
 import org.waxing.bean.Reserve;
 import org.waxing.dao.ReserveDAO;
 
@@ -26,13 +28,16 @@ public class AllReserveServlet extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html; charset=utf-8");
 		
+		HttpSession hs=req.getSession();
+		Member loginUser=(Member)hs.getAttribute("loginUser");
+		
 		ReserveDAO rdao=ReserveDAO.getInstance();
 		
-		ArrayList<Reserve> list=rdao.getAllReservation();
+		ArrayList<Reserve> list=rdao.getAllReservation(loginUser.getId());
 		
 		req.setAttribute("reserveList", list);
 		
-		RequestDispatcher rdp=req.getRequestDispatcher("waxing/reserve/reserveList.jsp");
+		RequestDispatcher rdp=req.getRequestDispatcher("waxing/reserve/reservationList.jsp");
 		rdp.forward(req, resp);
 	}
 }

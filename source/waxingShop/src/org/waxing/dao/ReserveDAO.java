@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import org.waxing.bean.Member;
 import org.waxing.bean.Reserve;
+import org.waxing.bean.Staff;
 import org.waxing.bean.Surgery;
 public class ReserveDAO {
 	private ReserveDAO() {}
@@ -21,8 +22,8 @@ public class ReserveDAO {
 		String sql=null;
 		StringBuffer sqlTemp=new StringBuffer();
 		sqlTemp.append("select * from ");
-		sqlTemp.append("reserve, member, staff ");
-		sqlTemp.append("where client_name=? and reserve_date>=sysdate");
+		sqlTemp.append("reserve ");
+		sqlTemp.append("where client_name=?");
 		sql=sqlTemp.toString();
 		ArrayList<Reserve> list=new ArrayList<Reserve>();
 		Connection conn=null;
@@ -35,28 +36,13 @@ public class ReserveDAO {
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				Reserve temp=new Reserve();
-				temp.setReserve_num(rs.getInt("reserve_num"));
-				temp.setClient(rs.getString("client_name"));
-				temp.setParticipant(rs.getInt("participant"));
-				temp.setReserve_price(rs.getInt("reserve_price"));
-				temp.setReserve_content(rs.getInt("reserve_content"));
-				temp.setReserve_date(rs.getDate("reserve_date"));
-				temp.setReserve_check(rs.getString("reserve_check"));
-				Member memberTemp=new Member();
-					memberTemp.setId(rs.getString("id"));
-					memberTemp.setPwd(rs.getString("pwd"));
-					memberTemp.setName(rs.getString("name"));
-					memberTemp.setIdentification(rs.getString("identification"));
-					memberTemp.setEmail(rs.getString("email"));
-					memberTemp.setPhone(rs.getString("phone"));
-					memberTemp.setPrefer_doc(rs.getInt("prefer_surger"));
-					memberTemp.setGrade(rs.getString("grade"));
-				temp.setMember(memberTemp);
-				Surgery surgeryTemp=new Surgery();
-					surgeryTemp.setSur_num(rs.getInt("surgery_num"));
-					surgeryTemp.setSur_num(rs.getString("surgery_num"));
-					surgeryTemp.setSur_num(rs.getInt("surgery_num"));
-					surgeryTemp.setSur_num(rs.getInt("surgery_num"));
+					temp.setReserve_num(rs.getInt("reserve_num"));
+					temp.setClient(rs.getString("client_name"));
+					temp.setParticipant(rs.getInt("participant"));
+					temp.setReserve_price(rs.getInt("reserve_price"));
+					temp.setReserve_content(rs.getInt("reserve_content"));
+					temp.setReserve_date(rs.getDate("reserve_date"));
+					temp.setReserve_check(rs.getString("reserve_check"));
 				list.add(temp);
 			}
 		}catch(SQLException e) {

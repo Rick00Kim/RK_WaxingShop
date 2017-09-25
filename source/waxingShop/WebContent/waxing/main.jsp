@@ -104,7 +104,7 @@
 										<img src="/waxingShop/images/tile04.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="/waxingShop/waxing/reserve/reservationList.jsp" class="link">예약 현황</a></h3>
+										<h3><a href="/waxingShop/reserveList.do" class="link">예약 현황</a></h3>
 										<p>회원님의 현재까지 받은 시술 내역 및 예약현황입니다.</p>
 									</header>
 								</article>

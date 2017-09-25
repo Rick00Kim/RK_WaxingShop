@@ -11,7 +11,6 @@
 
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 				<!-- Header -->
 				<div id="wrapper">
@@ -53,46 +52,21 @@
 						</ul>
 					</nav>
 
-				<!-- Banner -->
-				<!-- Note: The "styleN" class below should match that of the header element. -->
-				<div id="main">
-					<section id="banner" class="style4" >
-						<span class="image">
-							<img src="/waxingShop/images/infor2.jpg" alt="" />
-						</span>
-						<section class="inner">
-							<!-- 타이틀 -->
-							<div class="inner" style="background-color:rgb(247, 109, 109); opacity:0.9; border-radius:3em;">
-								<div><h1 align="center">예약 현황</h1></div>
-							</div>
-							<!-- 전체 주문 리스트 -->
-							<div class="6u 12u$(small)">
-								<div class="table-wrapper">
-									<table>
-										<tr>
-											<th><label>주문내용</label></th>
-											<th><label>총 가격</label></th>
-											<th><label>시술자 정보</label></th>
-											<th><label>시술 날짜</label></th>
-										</tr>
-										<!-- 내용 리스트 -->
-										<c:forEach var="temp" items="${reserveList }">
-											<tr onclick="return viewDetail('${temp.reserve_num}');" >
-												<td>${temp.surgery.sur_content }</td>
-												<td>${temp.reserve_price }</td>
-												<td>${temp.staff.staff_name }</td>
-												<td>${temp.reserve_date }</td>												
-											</tr>
-										</c:forEach>
-									</table>
+					<div id="main">
+						<section id="banner" class="style4" >
+							<span class="image">
+								<img src="/waxingShop/images/infor2.jpg" alt="" />
+							</span>
+							<div class="inner">
+								<div class="content" style="background-color:rgb(247, 109, 109); opacity:0.9; border-radius:3em;">
+									<header style="margin:13px; border:solid 3px;">
+										<h2>예약 현황</h2>
+									</header>
 								</div>
 							</div>
-							<!-- 상세정보 구간 -->
-							<div class="6u 12u$(small)" id="showDetail"></div>
 						</section>
-					</section>
+					</div>
 				</div>
-			</div>
 		<!-- Scripts -->
 			<script src="/waxingShop/assets/js/jquery.min.js"></script>
 			<script src="/waxingShop/assets/js/jquery.scrolly.min.js"></script>
