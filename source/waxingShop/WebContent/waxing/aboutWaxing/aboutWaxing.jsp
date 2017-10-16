@@ -97,7 +97,7 @@
 									<div class="content">
 										<div class="inner">
 											<header class="major">
-												<h3>왁싱을 하는 주 계층</h3>
+												<h3>과거, 왁싱을 하는 주 계층</h3>
 											</header>
 											<p>모델이나 왁싱을 본래부터 해 오던 특수 목적의 직업군만이 왁싱을 했지만, 최근에는 그 계층이 확산 되고 있다.</p>
 											<ul class="actions">

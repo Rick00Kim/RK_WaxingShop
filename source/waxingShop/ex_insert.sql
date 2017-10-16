@@ -4,7 +4,7 @@ insert into staff values(1,'Jack',3,'I`m Jack. My Presure~',1);
 insert into staff values(2,'Elvis',6,'Thank you for Your Choiced',1);
 insert into staff values(3,'Julia',12,'I`ll be a best',1);
 
-insert into member values('a01','1111','Rick','910819-111111','dreamx119@gmail.com','010-8546-1991',1,'client');
+insert into member values('dreamx119','qwe456312','Rick','910819-111111','dreamx119@gmail.com','010-8546-1991',1,'admin');
 
 insert into surgery values(surgery_num_seq.NEXTVAL,'Allnude','최근 가장 인기 있는 왁싱인 브라질리언 올누드 왁싱입니다.',100000,'man');
 insert into surgery values(surgery_num_seq.NEXTVAL,'Bikini','올누드가 부담스러운 분들을 위해 비키니 라인만 제모하는 방식입니다.',70000,'man');

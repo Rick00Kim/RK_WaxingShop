@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
-		<title>Surgery List</title>
+		<title>Surgery List - KWS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/waxingShop/assets/css/main.css" />
@@ -11,6 +11,7 @@
 			function goToPage(userid){
 				if(userid==''){
 					alert('로그인 먼저 해주세요.');
+					location.href='/waxingShop/waxing/member/loginForm.jsp';
 				}else{
 					alert('시술페이지로');
 				}

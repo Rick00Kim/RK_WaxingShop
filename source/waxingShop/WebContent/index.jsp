@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <title>KWS</title>
+    <title>KWS - Index</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -11,7 +11,7 @@
   <body>
     <div id="wrapper" >
       <header id="header" class="alt">
-        <a href="index.html" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
+        <a href="index.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
         <nav>
           <a href="#">made By Rick</a>
         </nav>

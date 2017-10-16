@@ -66,7 +66,6 @@
 							<span class="image">
 								<img src="/waxingShop/images/banner7.gif" alt="" />
 							</span>
-
 					</section>
 				<!-- Main -->
 					<div id="main">

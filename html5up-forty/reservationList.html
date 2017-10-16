@@ -10,10 +10,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#').click(function(){
+					$ajax({
+						type:'POST',
+						url:'/waxingShop/loadReserveDetail.do',
+						data : ({reserveNum : $('input[name=reserveNum]').val()}),
+						success : function(data){
+							if($.trim)
+						}
+					});
+				});
+			});
+		</script>
 	</head>
 	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -49,19 +61,19 @@
 								<img src="images/infor2.jpg" alt="" />
 							</span>
 							<section class="inner">
-								<div class="content" style="background-color:rgb(247, 109, 109); opacity:0.9; border-radius:3em;">
-									<header style="margin:13px;">
-										<h2>예약 현황</h2>
-									</header>
+								<div class="content" style="background-color:rgb(227, 118, 118); opacity:0.9; border-radius:3em;">
+									<div class="content" style="margin-left:10%; margin-top:2%; margin-bottom:2%; ">
+										<h2>Rick 회원님의 예약 현황</h2>
+									</div>
 								</div>
 								<div class="row">
 									<div class="6u 12u$(small) table-wrapper">
 										<table>
 											<tr>
-												<th>주문내용</th>
-												<th>주문금액</th>
-												<th>주문자</th>
-												<th>주문일자</th>
+												<th>시술명</th>
+												<th>시술금액</th>
+												<th>예약자</th>
+												<th>예약일자</th>
 											</tr>
 											<tr>
 												<td>Heart</td>
@@ -72,7 +84,31 @@
 										</table>
 									</div>
 									<div class="6u 12u$(small)">
-
+										<h2>시술 상세내역</h2>
+										<div class="table-wrapper">
+											<table>
+												<tr>
+													<td>Surgery Name</td>
+													<td>Heart</td>
+												</tr>
+												<tr>
+													<td>Price</td>
+													<td>80000</td>
+												</tr>
+												<tr>
+													<td>Participant</td>
+													<td>JOHN</td>
+												</tr>
+												<tr>
+													<td>Surgery_Time</td>
+													<td>14:30~16:00</td>
+												</tr>
+												<tr>
+													<td>Surgery_Date</td>
+													<td>2017-10-17(Tue)</td>
+												</tr>
+											</table>
+										</div>
 									</div>
 							</div>
 						</section>
