@@ -13,7 +13,6 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
-				<div id="wrapper">
 				<!-- Header -->
 					<header id="header" class="alt">
 						<a href="/waxingShop/waxing/main.jsp" class="logo"><strong>Kururu</strong> <span>waxingShop</span></a>
@@ -59,15 +58,15 @@
 							<div class="inner row">
 							<div class="4u 12u$(small)">
 								<header class="major">
-									<h1>Login</h1>
+									<h1>Forget Password</h1>
 								</header>
 								<div class="content">
-									<p style="font-size:20px">회원제 실시에 따라 로그인 후 이용 부탁드립니다.</p>
+									<p style="font-size:20px">정보찾기</p>
 								</div>
 							</div>
 						<div class="4u$ 12u$(small)" style="background-color:rgb(61, 102, 110); opacity:0.9;margin:2%; margin-left:20%; border-radius:3em;">
 							<section style="margin:10%;">
-								<label for="#">${error }</label>
+								<h2>ID 찾기</h2>
 								<form action="/waxingShop/login.do" method="post">
 									<label for="#">ID</label>
 									<input type="text" name="userid"></br>
@@ -78,9 +77,21 @@
 									<input type="button" class="button special" value="Join" onclick="location.href='/waxingShop/waxing/member/memberJoinForm.jsp'">
 								</form>
 							</section>
+							<section style="margin:10%;">
+								<h2>PWD 찾기</h2>
+								<form action="/waxingShop/login.do" method="post">
+									<label for="#">ID</label>
+									<input type="text" name="userid">
+									<label for="#">NAME</label>
+									<input type="text" name="name">
+									<input type="submit" value="Login" >&nbsp;&nbsp;&nbsp;
+									<input type="button" class="button special" value="Join" onclick="location.href='/waxingShop/waxing/member/memberJoinForm.jsp'">
+								</form>
+							</section>
 						</div>
 					</div>
 					</section>
+			</div>
 			</div>
 		<!-- Scripts -->
 			<script src="/waxingShop/assets/js/jquery.min.js"></script>

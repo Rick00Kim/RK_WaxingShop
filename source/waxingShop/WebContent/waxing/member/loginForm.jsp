@@ -77,7 +77,7 @@
 									<input type="text" name="userid"></br>
 									<label for="#">PASSWORD</label>
 									<input type="password" name="userpwd" ><br>
-									<a href="#">Sorry, Forget My Password</a><br><hr>
+									<a href="./findPWDPage.jsp">Sorry, Forget My Password</a><br><hr>
 									<input type="submit" value="Login" >&nbsp;&nbsp;&nbsp;
 									<input type="button" class="button special" value="Join" onclick="location.href='/waxingShop/waxing/member/memberJoinForm.jsp'">
 								</form>
