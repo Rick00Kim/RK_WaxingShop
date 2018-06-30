@@ -97,6 +97,7 @@ CREATE TABLE Reply
 	email varchar2(60),
 	content varchar2(200) NOT NULL,
 	writedate date NOT NULL,
+	del_flg char(1),
 	PRIMARY KEY (reply_num)
 );
 
@@ -130,6 +131,7 @@ CREATE TABLE Surgery
 	name varchar2(50) NOT NULL,
 	comments varchar2(200),
 	price number NOT NULL,
+	del_flg char(1),
 	PRIMARY KEY (surgery_num)
 );
 
